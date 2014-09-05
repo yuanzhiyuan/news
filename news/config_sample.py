@@ -23,16 +23,6 @@ MailAddr="xxx@qq.com"
 DEBUG=True
 
 ########
-#Log
-########
-logPath='./news/log/error.log'
-
-########
-#article lock
-########
-article_lock_password=''
-
-########
 #Memerycache
 ########
 Memerycache=False

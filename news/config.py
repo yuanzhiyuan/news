@@ -22,15 +22,6 @@ MailAddr="783087000@qq.com"
 ########
 DEBUG=True
 
-########
-#Log
-########
-logPath='./news/log/error.log'
-
-########
-#article lock
-########
-article_lock_password=''
 
 ########
 #Memerycache
