@@ -12,7 +12,8 @@ def changepwd():
     if request.method == 'GET':
         return render_template('changepwd.html')
     else:
-        if session['id'] and session['username'] and session['password']:
+        if not(session['id'] and session['username'] and session['password']):
+            return redirect('/login/')
             username=session['username']
             oldpassword=request.form['oldpassword']
             if username!='' and oldpassword!='':
@@ -37,9 +38,7 @@ def changepwd():
                     return '旧密码不正确'
             else:
                 return '请输入用户名/密码'
-            if uder:
-                return
-            if
+
 
 
 
