@@ -1,4 +1,3 @@
-import news.config as config
 from news import app
 from news.model.article import Article
 
