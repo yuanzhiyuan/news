@@ -13,3 +13,6 @@ class Article(Base):
     content=Column(Text)
     views=Column(Integer,default=0)
     state=Column(Integer,default=0)
+
+    def getArticle(self,id):
+        return session.query(Article).filter(Article.id == id).first()
