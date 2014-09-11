@@ -1,4 +1,5 @@
 from news import app,config
+
 if __name__ == '__main__':
     if config.DEBUG:
         app.run(host='0.0.0.0',debug=True)

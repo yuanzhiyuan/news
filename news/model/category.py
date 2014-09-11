@@ -1,4 +1,4 @@
-__author__ = 'yuan'
+__author__ = 'kongkongyzt'
 from common import *
 
 class Category(Base):

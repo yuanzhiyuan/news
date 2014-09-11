@@ -1,4 +1,4 @@
-__author__ = 'yuan'
+__author__ = 'kongkongyzt'
 import news.config as config
 
 from sqlalchemy import create_engine

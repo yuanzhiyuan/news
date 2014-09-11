@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="password" name="oldpassword" id="oldpassword" placeholder="旧密码" >
+<input type="password" name="newpassword" id="newpassword" placeholder="新密码" >
+<input type="password" name="renewpassword" id="renewpassword" placeholder="确认密码" >
+<button type="submit" data-username="{{session['username']}}" onclick="changePassword('member',this)">确认修改</button>
+
+</body>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/global.js"></script>
+</html>

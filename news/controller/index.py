@@ -1,3 +1,4 @@
+__author__ = 'kongkongyzt'
 import news.config as config
 from news import app
 
