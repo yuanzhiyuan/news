@@ -23,28 +23,20 @@ function login(){
             password:password
         },
         function(data,status){
-            if(data=='admin'){
-                location.href='/admin/'
-            }else if(data=='center'){
-                location.href='/center/user/'+username
-            }else if(data=='department'){
-                location.href='/department/user/'+username
-            }else if(data=='member'){
-                location.href='/member/user/'+username
-
-            }else if(data=='error0'){
-                alert('role参数错误，不在0~3之间')
-                location.reload()
-            }else if(data=='error1'){
+            if(data=='success'){
+                alert('登录成功！')
+                location.href='/admin'
+            }
+            else if(data=='error1'){
                 alert('用户名/密码错误')
                 location.reload()
-            }else if(data=='error2'){
+            }
+            else if(data=='error2'){
                 alert('请输入密码')
                 location.reload()
-            }else if(data=='error3'){
-                alert('请输入用户名')
-                location.reload()
             }
+
+
         })
 }
 
@@ -68,7 +60,7 @@ function changePassword(role,obj){
         alert('请确认密码')
         return false
     }
-    $.post('/'+role+'/changepwd',
+    $.post('/user/changepwd',
         {
             oldpassword:oldpassword,
             newpassword:newpassword,

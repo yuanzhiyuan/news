@@ -14,7 +14,7 @@ class User(Base):
 
     def updateInfo(self,id=None,username=None,password=None,lastip=None,lasttime=None):
         if id:
-            userObj=session.query(User).filter(User.id==id)
+            userObj=session.query(User).filter(User.id==id).first()
             if password:
                 changeDict={'password':md5(password).hexdigest()}
             elif lastip and lasttime:
@@ -23,7 +23,7 @@ class User(Base):
             session.commit()
             return True
         elif username:
-            userObj=session.query(User).filter(User.id==id)
+            userObj=session.query(User).filter(User.id==id).first()
             if password:
 
                 changeDict={'password':md5(password).hexdigest()}
@@ -32,6 +32,30 @@ class User(Base):
             userObj.update(changeDict)
             session.commit()
             return True
+    def validate(self,username,password):
+
+        user=session.query(User).filter(User.username==username).first()
+        if user:
+            if user.password==md5(password).hexdigest():
+                return True
+            else:
+                return False
+        else:
+            return False
+    def getUserObj(self,username=None,id=None):
+        if username!=None:
+            user=session.query(User).filter(User.username==username).first()
+            if user:
+                return user
+            else:
+                return False
+        elif id!=None:
+            user=session.query(User).filter(User.id==id).first()
+            if user:
+                return user
+            else:
+                return False
+
 
 
 
@@ -41,6 +65,9 @@ class User(Base):
 
 
 Base.metadata.create_all(engine)
+
+user=User()
+user.updateInfo(id=2,password='950708')
 
 
 
