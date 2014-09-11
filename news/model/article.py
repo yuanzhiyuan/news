@@ -15,4 +15,6 @@ class Article(Base):
     state=Column(Integer,default=0)
 
     def getArticle(self,id):
-        return session.query(Article).filter(Article.id == id).first()
+        test=session.query(Article).filter(Article.id == id).first()
+        print test,'========='
+        return test

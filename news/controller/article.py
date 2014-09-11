@@ -1,6 +1,8 @@
 import news.config as config
 from news import app
+from news.model.article import Article
 
 @app.route('/article/<int:id>')
 def viewArticle(id):
-    pass
+    Article().getArticle(id)
+    return 'request finished'
