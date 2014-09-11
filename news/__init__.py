@@ -6,6 +6,7 @@ app.secret_key = 'fuck'
 import news.controller.index
 import news.controller.user
 import news.controller.article
+import news.controller.category
 
 if not config.DEBUG:
     import news.controller.errorHandler
