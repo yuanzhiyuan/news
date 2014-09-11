@@ -14,7 +14,7 @@ class User(Base):
 
     def updateInfo(self,id=None,username=None,password=None,lastip=None,lasttime=None):
         if id:
-            userObj=session.query(User).filter(User.id==id).first()
+            userObj=session.query(User).filter(User.id==id)
             if password:
                 changeDict={'password':md5(password).hexdigest()}
             elif lastip and lasttime:
@@ -23,7 +23,7 @@ class User(Base):
             session.commit()
             return True
         elif username:
-            userObj=session.query(User).filter(User.id==id).first()
+            userObj=session.query(User).filter(User.id==id)
             if password:
 
                 changeDict={'password':md5(password).hexdigest()}

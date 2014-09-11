@@ -13,7 +13,7 @@ def changepwd():
         return render_template('changepwd.html')
     else:
         if not(session['id'] and session['username'] and session['password']):
-            return redirect('/login/')
+            
             username=session['username']
             oldpassword=request.form['oldpassword']
             if username!='' and oldpassword!='':
