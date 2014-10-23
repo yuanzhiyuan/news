@@ -1,0 +1,30 @@
+{% extends "manage/admin.html" %}
+{% block content %}
+  <div id="main">
+    <div id="main_page_content"> 
+      <div id="main_title"><h2>修改密码</h2></div>
+      <div id="main_body">
+        <div id="addUser">
+
+          <div class="addUser_row">
+            <div class="addUser_leftRow">旧密码</div>
+            <div class="addUser_rightRow"><input type="password" id="oldpassword"/></div>
+          </div>
+          <div class="addUser_row">
+            <div class="addUser_leftRow">新密码</div>
+            <div class="addUser_rightRow"><input type="password" id="newpassword"/></div>
+          </div>
+          <div class="addUser_row">
+            <div class="addUser_leftRow">重复密码</div>
+            <div class="addUser_rightRow"><input type="password" id="renewpassword"/></div>
+          </div>
+          <div class="addUser_row">
+            <div class="addUser_leftRow"></div>
+            <div class="addUser_rightRow"><button type="submit" onclick="changePassword()">提交</button></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,808 @@
+2014-10-14 11:05:41,218 ERROR: Exception on /article/58267 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_article.id AS news_article_id, news_article.categoryid AS news_article_categoryid, news_article.title AS news_article_title, news_article.publisher AS news_article_publisher, news_article.author AS news_article_author, news_article.editor AS news_article_editor, news_article.`publishTime` AS `news_article_publishTime`, news_article.`updateTime` AS `news_article_updateTime`, news_article.content AS news_article_content, news_article.views AS news_article_views, news_article.state AS news_article_state, news_article.checker1 AS news_article_checker1, news_article.checker2 AS news_article_checker2 \nFROM news_article \nWHERE news_article.id = %s \n LIMIT %s' [immutabledict({})]
+2014-10-14 11:05:41,476 ERROR: ERROR:500: IP:218.197.159.215 REQUEST URL:http://news.future.org.cn/article/58267 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-14 11:05:41,675 ERROR: Header:Cookie: CNZZDATA1000537224=887966082-1411313843-http%253A%252F%252Fmp.weixin.qq.com%252F%7C1411313843
+Content-Length: 
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12A365 MicroMessenger/6.0 NetType/WIFI
+Connection: keep-alive
+Host: news.future.org.cn
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-14 11:13:46,661 ERROR: Exception on /article/58257 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_article.id AS news_article_id, news_article.categoryid AS news_article_categoryid, news_article.title AS news_article_title, news_article.publisher AS news_article_publisher, news_article.author AS news_article_author, news_article.editor AS news_article_editor, news_article.`publishTime` AS `news_article_publishTime`, news_article.`updateTime` AS `news_article_updateTime`, news_article.content AS news_article_content, news_article.views AS news_article_views, news_article.state AS news_article_state, news_article.checker1 AS news_article_checker1, news_article.checker2 AS news_article_checker2 \nFROM news_article \nWHERE news_article.id = %s \n LIMIT %s' [immutabledict({})]
+2014-10-14 11:13:46,871 ERROR: ERROR:500: IP:183.195.233.90 REQUEST URL:http://news.future.org.cn/article/58257 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-14 11:13:47,090 ERROR: Header:Cookie: CNZZDATA1000537224=1717155532-1413255125-%7C1413255125
+Content-Length: 
+Accept-Charset: utf-8, iso-8859-1, utf-16, *;q=0.7
+User-Agent: Mozilla/5.0 (Linux; U; Android 4.0.4; zh-cn; XT928 Build/6.7.2_GC-203-DNRCG-9) AppleWebKit/533.1 (KHTML, like Gecko)Version/4.0 Mobile Safari/533.1 V1_AND_SQ_4.7.0_122_YYB_D QQ/4.7.0.2155
+Connection: close
+Host: news.future.org.cn
+Accept: application/vnd.wap.xhtml+xml, text/vnd.wap.wml, application/xhtml+xml, text/html, image/png, image/jpeg, image/gif, */*;q=0.1
+X-Forwarded-For: 115.168.80.101
+Accept-Language: zh-CN
+Content-Type: 
+Accept-Encoding: gzip
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-14 11:31:10,175 ERROR: Exception on /article/58128 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_article.id AS news_article_id, news_article.categoryid AS news_article_categoryid, news_article.title AS news_article_title, news_article.publisher AS news_article_publisher, news_article.author AS news_article_author, news_article.editor AS news_article_editor, news_article.`publishTime` AS `news_article_publishTime`, news_article.`updateTime` AS `news_article_updateTime`, news_article.content AS news_article_content, news_article.views AS news_article_views, news_article.state AS news_article_state, news_article.checker1 AS news_article_checker1, news_article.checker2 AS news_article_checker2 \nFROM news_article \nWHERE news_article.id = %s \n LIMIT %s' [immutabledict({})]
+2014-10-14 11:31:10,384 ERROR: ERROR:500: IP:66.249.67.20 REQUEST URL:http://news.future.org.cn/article/58128 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-14 11:31:10,592 ERROR: Header:If-Modified-Since: Sat, 11 Oct 2014 18:04:42 GMT
+From: googlebot(at)googlebot.com
+Content-Length: 
+User-Agent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+Connection: Keep-alive
+Host: news.future.org.cn
+Accept: */*
+Content-Type: 
+Accept-Encoding: gzip,deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-14 11:39:07,915 ERROR: Exception on /article/58267 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_article.id AS news_article_id, news_article.categoryid AS news_article_categoryid, news_article.title AS news_article_title, news_article.publisher AS news_article_publisher, news_article.author AS news_article_author, news_article.editor AS news_article_editor, news_article.`publishTime` AS `news_article_publishTime`, news_article.`updateTime` AS `news_article_updateTime`, news_article.content AS news_article_content, news_article.views AS news_article_views, news_article.state AS news_article_state, news_article.checker1 AS news_article_checker1, news_article.checker2 AS news_article_checker2 \nFROM news_article \nWHERE news_article.id = %s \n LIMIT %s' [immutabledict({})]
+2014-10-14 11:39:08,474 ERROR: ERROR:500: IP:218.197.159.215 REQUEST URL:http://news.future.org.cn/article/58267 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-14 11:39:09,058 ERROR: Header:Cookie: CNZZDATA1000537224=1748814833-1413255093-%7C1413255093
+Content-Length: 
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Mobile/11D257 MicroMessenger/6.0 NetType/WIFI
+Connection: keep-alive
+Host: news.future.org.cn
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-14 12:34:22,159 ERROR: Exception on /article/51166 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_article.id AS news_article_id, news_article.categoryid AS news_article_categoryid, news_article.title AS news_article_title, news_article.publisher AS news_article_publisher, news_article.author AS news_article_author, news_article.editor AS news_article_editor, news_article.`publishTime` AS `news_article_publishTime`, news_article.`updateTime` AS `news_article_updateTime`, news_article.content AS news_article_content, news_article.views AS news_article_views, news_article.state AS news_article_state, news_article.checker1 AS news_article_checker1, news_article.checker2 AS news_article_checker2 \nFROM news_article \nWHERE news_article.id = %s \n LIMIT %s' [immutabledict({})]
+2014-10-14 12:34:22,459 ERROR: ERROR:500: IP:42.156.138.108 REQUEST URL:http://news.future.org.cn/article/51166 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-14 12:34:22,757 ERROR: Header:Content-Length: 
+User-Agent: YisouSpider
+Connection: Keep-Alive
+Host: news.future.org.cn
+Accept: */*
+Accept-Language: zh-cn,en-us,zh-tw,en-gb,en;
+Content-Type: 
+Accept-Encoding: gzip
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-14 13:14:29,972 ERROR: Exception on /article/58251 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_article.id AS news_article_id, news_article.categoryid AS news_article_categoryid, news_article.title AS news_article_title, news_article.publisher AS news_article_publisher, news_article.author AS news_article_author, news_article.editor AS news_article_editor, news_article.`publishTime` AS `news_article_publishTime`, news_article.`updateTime` AS `news_article_updateTime`, news_article.content AS news_article_content, news_article.views AS news_article_views, news_article.state AS news_article_state, news_article.checker1 AS news_article_checker1, news_article.checker2 AS news_article_checker2 \nFROM news_article \nWHERE news_article.id = %s \n LIMIT %s' [immutabledict({})]
+2014-10-14 13:14:30,283 ERROR: ERROR:500: IP:111.183.22.251 REQUEST URL:http://news.future.org.cn/article/58251 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-14 13:14:30,608 ERROR: Header:Referer: http://www.future.org.cn/
+Content-Length: 
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:32.0) Gecko/20100101 Firefox/32.0
+Connection: keep-alive
+Cookie: CNZZDATA1000537224=1972348312-1413263734-http%253A%252F%252Fwww.future.org.cn%252F%7C1413263734
+Host: news.future.org.cn
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-14 14:41:16,116 INFO: ERROR:404: IP:202.114.99.40 REQUEST URL:http://news.future.org.cn/favicon.ico [in /home/future/wwwroot/news/news/controller/errorHandler.py:19]
+2014-10-14 14:41:16,117 INFO: Header:Cookie: bdshare_firstime=1410233704254; CNZZDATA1000537224=305451716-1410233315-http%253A%252F%252Ftest.future.org.cn%252F%7C1413268679
+Content-Length: 
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36
+Connection: Keep-Alive
+Via: 1.1 FUTURE40
+Host: news.future.org.cn
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8
+Content-Type: 
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:20]
+2014-10-14 20:41:43,163 ERROR: Exception on /article/58209 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_article.id AS news_article_id, news_article.categoryid AS news_article_categoryid, news_article.title AS news_article_title, news_article.publisher AS news_article_publisher, news_article.author AS news_article_author, news_article.editor AS news_article_editor, news_article.`publishTime` AS `news_article_publishTime`, news_article.`updateTime` AS `news_article_updateTime`, news_article.content AS news_article_content, news_article.views AS news_article_views, news_article.state AS news_article_state, news_article.checker1 AS news_article_checker1, news_article.checker2 AS news_article_checker2 \nFROM news_article \nWHERE news_article.id = %s \n LIMIT %s' [immutabledict({})]
+2014-10-14 20:41:43,465 ERROR: ERROR:500: IP:101.226.61.186 REQUEST URL:http://news.future.org.cn/article/58209 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-14 20:41:43,757 ERROR: Header:Cookie: CNZZDATA1000537224=530287819-1413289726-http%253A%252F%252Fm.baidu.com%252F%7C1413289726
+Content-Length: 
+User-Agent: Mozilla/5.0 (Linux; U; Android 2.3.6; zh-cn; GT-I8250 Build/GINGERBREAD) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 Mobile Safari/537.36
+Connection: close
+Referer: http://m.baidu.com/from=1000953b/s?word=%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6%E7%AC%AC%E4%B8%89%E5%8D%81%E5%9B%9B%E5%B1%8A%E5%AD%A6%E7%94%9F%E9%83%A8%E5%AD%A6%E4%B9%A0%E9%83%A8%E5%90%8D%E5%8D%95&sa=ib&ts=1778816
+Host: news.future.org.cn
+Accept: application/vnd.wap.xhtml+xml, text/vnd.wap.wml, application/xhtml+xml, text/html, image/png, image/jpeg, image/gif, */*;q=0.1
+X-Forwarded-For: 211.140.5.99
+Accept-Language: zh-CN
+Content-Type: 
+Accept-Encoding: gzip
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-14 23:27:02,036 ERROR: Exception on /article/58246 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_article.id AS news_article_id, news_article.categoryid AS news_article_categoryid, news_article.title AS news_article_title, news_article.publisher AS news_article_publisher, news_article.author AS news_article_author, news_article.editor AS news_article_editor, news_article.`publishTime` AS `news_article_publishTime`, news_article.`updateTime` AS `news_article_updateTime`, news_article.content AS news_article_content, news_article.views AS news_article_views, news_article.state AS news_article_state, news_article.checker1 AS news_article_checker1, news_article.checker2 AS news_article_checker2 \nFROM news_article \nWHERE news_article.id = %s \n LIMIT %s' [immutabledict({})]
+2014-10-14 23:27:02,247 ERROR: ERROR:500: IP:27.18.148.149 REQUEST URL:http://news.future.org.cn/article/58246 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-14 23:27:02,440 ERROR: Header:Content-Length: 
+User-Agent: Mozilla/5.0 (iPad; CPU OS 7_0_4 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11B554a Safari/9537.53
+Connection: keep-alive
+Host: news.future.org.cn
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-15 12:36:00,913 ERROR: Exception on /article/49401 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_article.id AS news_article_id, news_article.categoryid AS news_article_categoryid, news_article.title AS news_article_title, news_article.publisher AS news_article_publisher, news_article.author AS news_article_author, news_article.editor AS news_article_editor, news_article.`publishTime` AS `news_article_publishTime`, news_article.`updateTime` AS `news_article_updateTime`, news_article.content AS news_article_content, news_article.views AS news_article_views, news_article.state AS news_article_state, news_article.checker1 AS news_article_checker1, news_article.checker2 AS news_article_checker2 \nFROM news_article \nWHERE news_article.id = %s \n LIMIT %s' [immutabledict({})]
+2014-10-15 12:36:01,140 ERROR: ERROR:500: IP:42.156.136.108 REQUEST URL:http://news.future.org.cn/article/49401 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-15 12:36:01,348 ERROR: Header:Content-Length: 
+User-Agent: YisouSpider
+Connection: Keep-Alive
+Host: news.future.org.cn
+Accept: */*
+Accept-Language: zh-cn,en-us,zh-tw,en-gb,en;
+Content-Type: 
+Accept-Encoding: gzip
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-15 12:41:33,254 ERROR: Exception on /article/58209 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_article.id AS news_article_id, news_article.categoryid AS news_article_categoryid, news_article.title AS news_article_title, news_article.publisher AS news_article_publisher, news_article.author AS news_article_author, news_article.editor AS news_article_editor, news_article.`publishTime` AS `news_article_publishTime`, news_article.`updateTime` AS `news_article_updateTime`, news_article.content AS news_article_content, news_article.views AS news_article_views, news_article.state AS news_article_state, news_article.checker1 AS news_article_checker1, news_article.checker2 AS news_article_checker2 \nFROM news_article \nWHERE news_article.id = %s \n LIMIT %s' [immutabledict({})]
+2014-10-15 12:41:33,451 ERROR: ERROR:500: IP:101.226.61.186 REQUEST URL:http://news.future.org.cn/article/58209 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-15 12:41:33,643 ERROR: Header:Cookie: CNZZDATA1000537224=530287819-1413289726-http%253A%252F%252Fm.baidu.com%252F%7C1413289726
+Qpr-Loop: V1
+Content-Length: 
+Accept-Charset: utf-8,gb2321;q=0.7,*;q=0.7
+User-Agent: Mozilla/5.0 (Linux; U; Android 2.3.6; zh-cn; GT-I8250 Build/GINGERBREAD) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.0 Mobile Safari/537.36
+Connection: close
+Referer: http://m.baidu.com/from=1000953b/s?word=http%3A%2F%2Fsu.whu.edu.cn%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6%E5%AD%A6%E7%94%9F%E4%BC%9A%E7%AB%992014%E5%AD%A6%E4%B9%A0%E9%83%A8%E6%96%B0%E7%94%9F%E8%A2%AB%E5%BD%95%E5%8F%96%E7%9A%84%E5%90%8D%E5%8D%95&sa=ib&ts=6349725
+Q-Proxy-Wanip: 0.0.0.0
+Q-Proxy-Type: 385
+Q-Guid: 1270656bf54d685aa6362cdc133c88cb
+Q-Auth: 2c0085e2c44564d066b53005dc312dbce78d369d9e8b8273
+Host: news.future.org.cn
+Accept: application/vnd.wap.xhtml+xml, text/vnd.wap.wml, application/xhtml+xml, text/html, image/png, image/jpeg, image/gif, */*;q=0.1
+Q-Proxy-Param: PROTOCOL=0,QUALITY=2,APN=cmnet,Q-SID=1325376374,SupportedImage=63
+Q-Ua: ADRQBX50_GA/500710&X5MTT_3/025013&ADR&305014& GT-I8250 &21068&9285&Android2.3.6 &V3
+X-Forwarded-For: 211.140.5.102
+Accept-Language: zh-CN
+Content-Type: 
+Accept-Encoding: gzip
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-15 15:28:08,924 ERROR: Exception on /article/58248 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_article.id AS news_article_id, news_article.categoryid AS news_article_categoryid, news_article.title AS news_article_title, news_article.publisher AS news_article_publisher, news_article.author AS news_article_author, news_article.editor AS news_article_editor, news_article.`publishTime` AS `news_article_publishTime`, news_article.`updateTime` AS `news_article_updateTime`, news_article.content AS news_article_content, news_article.views AS news_article_views, news_article.state AS news_article_state, news_article.checker1 AS news_article_checker1, news_article.checker2 AS news_article_checker2 \nFROM news_article \nWHERE news_article.id = %s \n LIMIT %s' [immutabledict({})]
+2014-10-15 15:28:09,127 ERROR: ERROR:500: IP:10.128.71.197 REQUEST URL:http://news.future.org.cn/article/58248 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-15 15:28:09,319 ERROR: Header:Referer: http://www.future.org.cn/
+Content-Length: 
+User-Agent: Mozilla/5.0 (iPad; U; CPU OS 7_1 like Mac OS X; zh-CN; iPad4,4) AppleWebKit/534.46 (KHTML, like Gecko) UCBrowser/2.7.0.448 U3/ Mobile/10A403 Safari/7543.48.3
+Connection: keep-alive
+Cookie: bdshare_firstime=1409188420779; CNZZDATA1000537224=2059893744-1409188364-http%253A%252F%252Fwww.future.org.cn%252F%7C1413255029
+Host: news.future.org.cn
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-15 21:12:57,030 INFO: ERROR:404: IP:220.181.125.129 REQUEST URL:http://news.future.org.cn/articles/72740.html [in /home/future/wwwroot/news/news/controller/errorHandler.py:19]
+2014-10-15 21:12:57,031 INFO: Header:If-Modified-Since: Fri, 05 Sep 2014 18:37:07 GMT
+Content-Length: 
+User-Agent: Sogou web spider/4.0(+http://www.sogou.com/docs/help/webmasters.htm#07)
+Connection: close
+Host: news.future.org.cn
+Accept: */*
+Accept-Language: zh-cn
+Content-Type: 
+Accept-Encoding: gzip,deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:20]
+2014-10-15 23:57:41,376 ERROR: Exception on /category/getchildid [POST] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/auth.py", line 12, in wrapped
+    return f(*args, **kwargs)
+  File "/home/future/wwwroot/news/news/controller/category.py", line 88, in getchildid
+    child=db_category.Category().getChildId(parentid=parentid)
+  File "/home/future/wwwroot/news/news/model/category.py", line 15, in getChildId
+    return session.query(Category).filter(Category.parentid == parentid).all()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2293, in all
+    return list(self)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_category.id AS news_category_id, news_category.parentid AS news_category_parentid, news_category.categoryname AS news_category_categoryname \nFROM news_category \nWHERE news_category.parentid = %s' [immutabledict({})]
+2014-10-15 23:57:41,654 ERROR: ERROR:500: IP:222.20.231.33 REQUEST URL:http://news.future.org.cn/category/getchildid [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-15 23:57:41,915 ERROR: Header:Referer: http://news.future.org.cn/article/action/add
+Content-Length: 12
+User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+Connection: Keep-Alive
+Cookie: session=.eJwdiTkOgDAMBP_iOgUY28G8JU0IQaLgUKKIAvF3LJrR7OwD2wLT6OCKtd5nsQE9DsQCDlrN5Yh7thaazCLGRBoaK3rjX9QzmmdPodGKnXlUKyrJXpaM8H4Ydx5R.ByAqiQ.Z4puDyN_3xy_QZCsLm52urXXwuU
+X-Requested-With: XMLHttpRequest
+Dnt: 1
+Host: news.future.org.cn
+Cache-Control: no-cache
+Accept: */*
+Accept-Language: zh-CN
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-16 08:24:15,886 INFO: ERROR:404: IP:119.103.228.9 REQUEST URL:http://news.future.org.cn/static/upload/ueditor/file/20141014/1413253215886447.doc&range=570 [in /home/future/wwwroot/news/news/controller/errorHandler.py:19]
+2014-10-16 08:24:15,887 INFO: Header:Content-Length: 
+User-Agent: Dalvik/1.6.0 (Linux; U; Android 4.4.4; MI 3 MIUI/4.10.10)
+Connection: Keep-Alive
+Range: bytes=570-
+Host: news.future.org.cn
+Net-Type: wifi
+Content-Type: 
+Accept-Encoding: identity
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:20]
+2014-10-16 10:09:45,075 ERROR: Exception on /article/58084 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_article.id AS news_article_id, news_article.categoryid AS news_article_categoryid, news_article.title AS news_article_title, news_article.publisher AS news_article_publisher, news_article.author AS news_article_author, news_article.editor AS news_article_editor, news_article.`publishTime` AS `news_article_publishTime`, news_article.`updateTime` AS `news_article_updateTime`, news_article.content AS news_article_content, news_article.views AS news_article_views, news_article.state AS news_article_state, news_article.checker1 AS news_article_checker1, news_article.checker2 AS news_article_checker2 \nFROM news_article \nWHERE news_article.id = %s \n LIMIT %s' [immutabledict({})]
+2014-10-16 10:09:45,276 ERROR: ERROR:500: IP:222.204.24.220 REQUEST URL:http://news.future.org.cn/article/58084 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-16 10:09:45,483 ERROR: Header:Referer: http://news.future.org.cn/category/2/page/2
+Content-Length: 
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)
+Connection: Keep-Alive
+Cookie: CNZZDATA1000537224=682089116-1413425079-http%253A%252F%252Fwww.future.org.cn%252F%7C1413425079
+Host: news.future.org.cn
+Accept: application/x-shockwave-flash, image/gif, image/jpeg, image/pjpeg, image/pjpeg, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, application/x-ms-application, application/x-ms-xbap, application/vnd.ms-xpsdocument, application/xaml+xml, */*
+Accept-Language: zh-cn
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-16 12:10:35,267 ERROR: Exception on /article/58267 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2420, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 891, in _execute_context
+    None, None)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 885, in _execute_context
+    conn = self._revalidate_connection()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 241, in _revalidate_connection
+    "Can't reconnect until invalid "
+StatementError: Can't reconnect until invalid transaction is rolled back (original cause: InvalidRequestError: Can't reconnect until invalid transaction is rolled back) u'SELECT news_article.id AS news_article_id, news_article.categoryid AS news_article_categoryid, news_article.title AS news_article_title, news_article.publisher AS news_article_publisher, news_article.author AS news_article_author, news_article.editor AS news_article_editor, news_article.`publishTime` AS `news_article_publishTime`, news_article.`updateTime` AS `news_article_updateTime`, news_article.content AS news_article_content, news_article.views AS news_article_views, news_article.state AS news_article_state, news_article.checker1 AS news_article_checker1, news_article.checker2 AS news_article_checker2 \nFROM news_article \nWHERE news_article.id = %s \n LIMIT %s' [immutabledict({})]
+2014-10-16 12:10:37,675 ERROR: ERROR:500: IP:116.211.136.166 REQUEST URL:http://news.future.org.cn/article/58267 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-16 12:10:40,264 ERROR: Header:Referer: http://www.future.org.cn/
+Content-Length: 
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; QQBrowser/8.0.1374.400)
+Connection: Keep-Alive
+Cookie: CNZZDATA1000537224=1164998053-1412997224-%7C1412997224
+Host: news.future.org.cn
+Accept: text/html, application/xhtml+xml, */*
+Accept-Language: zh-CN
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-16 15:04:19,219 INFO: ERROR:404: IP:202.114.123.22 REQUEST URL:http://news.future.org.cn/favicon.ico [in /home/future/wwwroot/news/news/controller/errorHandler.py:19]
+2014-10-16 15:04:19,221 INFO: Header:Cookie: CNZZDATA1000537224=1559133056-1413443164-%7C1413443164
+Content-Length: 
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko
+Connection: Keep-Alive
+Dnt: 1
+Host: news.future.org.cn
+Accept: */*
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:20]

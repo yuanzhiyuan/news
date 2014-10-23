@@ -1,0 +1,443 @@
+2014-10-14 11:31:27,491 INFO: ERROR:404: IP:10.132.77.232 REQUEST URL:http://news.future.org.cn/favicon.ico [in /home/future/wwwroot/news/news/controller/errorHandler.py:19]
+2014-10-14 11:31:27,494 INFO: Header:Cookie: CNZZDATA1000537224=1148325707-1413257591-%7C1413257591
+Content-Length: 
+User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.137 Safari/537.36 LBBROWSER
+Connection: keep-alive
+Host: news.future.org.cn
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8
+Content-Type: 
+Accept-Encoding: gzip,deflate,sdch
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:20]
+2014-10-14 16:00:28,046 INFO: ERROR:404: IP:115.156.104.96 REQUEST URL:http://news.future.org.cn/favicon.ico [in /home/future/wwwroot/news/news/controller/errorHandler.py:19]
+2014-10-14 16:00:28,047 INFO: Header:Cookie: bdshare_firstime=1394018520979; Hm_lvt_997dd1ef1cd0ffc71b030c6fb102054c=1399041272,1399293471; Hm_lvt_86bb9933fbc81638c6a43ece0fae26d4=1399605852,1399605883,1399653207,1401191110
+Content-Length: 
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36 SE 2.X MetaSr 1.0
+Connection: Keep-Alive
+Host: news.future.org.cn
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:20]
+2014-10-15 09:36:06,617 ERROR: Exception on /article/action/add [POST] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/auth.py", line 12, in wrapped
+    return f(*args, **kwargs)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 141, in addArticle
+    db_article.Article().addArticle(categoryid=categoryid,title=title,publisher=publisher,author=author,editor=editor,content=content)
+  File "/home/future/wwwroot/news/news/model/article.py", line 27, in addArticle
+    session.commit()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 768, in commit
+    self.transaction.commit()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 370, in commit
+    self._prepare_impl()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 350, in _prepare_impl
+    self.session.flush()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 1907, in flush
+    self._flush(objects)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2025, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 57, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 1989, in _flush
+    flush_context.execute()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 371, in execute
+    rec.execute(self)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 524, in execute
+    uow
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 64, in save_obj
+    mapper, table, insert)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 600, in _emit_insert_statements
+    execute(statement, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 727, in execute
+    return meth(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 322, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 824, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 954, in _execute_context
+    context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _handle_dbapi_exception
+    exc_info
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 189, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 947, in _execute_context
+    context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 435, in do_execute
+    cursor.execute(statement, parameters)
+  File "/usr/local/lib/python2.7/dist-packages/MySQLdb/cursors.py", line 205, in execute
+    self.errorhandler(self, exc, value)
+  File "/usr/local/lib/python2.7/dist-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
+    raise errorclass, errorvalue
+OperationalError: (OperationalError) (2006, 'MySQL server has gone away') 'INSERT INTO news_article (categoryid, title, publisher, author, editor, `publishTime`, `updateTime`, content, views, state, checker1, checker2) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' (u'3', u'\u3010\u4eba\u6c11\u3011\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u5355\u8eab\u9752\u5e74\u4ea4\u53cb\u8054\u8c0a\u4f1a', u'\u6b66\u6c49\u5927\u5b66\u9752\u5e74\u4f20\u5a92\u96c6\u56e2', u'\u6587\u5b57\u8bb0\u8005 \u5305\u5b89\u88d5\uff1b\u56fe\u7247\u8bb0\u8005 \u674e\u660e', u'\u5f20\u5cb1', 0, 1413336966.613173, u'<p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;">\u91d1\u79cb\u5341\u6708\uff0c\u4e39\u6842\u98d8\u9999\u300210\u670812\u65e5\u4e0b\u5348\uff0c\u201c\u7f18\u6765\u662f\u4f60\u201d\u4ea4\u53cb\u8054\u8c0a\u4f1a\u5728\u6211\u6821\u4eba\u6c11\u533b\u9662\u6d3b\u52a8\u4e2d\u5fc3\u793c\u5802\u7cbe\u5f69\u4e0a\u6f14\uff0c\u672c\u6b21\u4ea4\u53cb\u8054\u8c0a\u4f1a\u7531\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e0e\u4e2d\u8239\u91cd\u5de5\u7b2c\u4e03\u3007\u4e00\u7814\u7a76\u6240\u56e2\u59d4\u5408\u529e\uff0c\u5438\u5f15\u4e86\u6b66\u6c49\u5927\u5b66\u3001\u4e2d\u56fd\u5efa\u8bbe\u94f6\u884c\u6e56\u5317\u7701\u5206\u884c\u3001\u6e56\u5317\u7701\u98df\u54c1\u836f\u54c1\u76d1\u7763\u68c0\u9a8c\u7814\u7a76\u9662\u3001\u6e56\u5317\u4e2d\u533b\u836f\u5927\u5b66\u7b49\u4f18\u8d28\u5355\u4f4d\u7684\u5355\u8eab\u9752\u5e7460\u4f59\u4eba\u53c2\u52a0\uff0c\u65e8\u5728\u901a\u8fc7\u5c0f\u89c4\u6a21\u7684\u6d3b\u52a8\u4fc3\u8fdb\u5355\u8eab\u9752\u5e74\u7684\u6df1\u5165\u4ea4\u6d41\uff0c\u5f00\u542f\u6709\u7f18\u4e4b\u65c5\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><img src="/static/upload/ueditor/image/20141015/1413336704159256.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><span style="font-size: 16px; font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai;">\uff08\u9752\u5e74\u4eec\u8fdb\u884c\u4ea4\u53cb\u6d3b\u52a8\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;">\u4ea4\u53cb\u8054\u8c0a\u4f1a\u901a\u8fc7\u201c\u5feb\u4e50\u62a5\u5230\u201d\u3001\u201c\u7231\u60c5\u884c\u8d70\u201d\u3001\u201c\u7ea2\u7ebf\u7275\u60c5\u201d\u3001\u201c\u6211\u629b\u7ee3\u7403\u201d\u56db\u4e2a\u4e3b\u9898\u6e38\u620f\u8c03\u52a8\u9752\u5e74\u7684\u53c2\u4e0e\u70ed\u60c5\uff0c\u8ba9\u5927\u5bb6\u5728\u8f7b\u677e\u6b22\u4e50\u7684\u6c1b\u56f4\u4e2d\u5c55\u793a\u81ea\u6211\u3001\u4e86\u89e3\u5bf9\u65b9\u3002\u6b64\u5916\uff0c\u4ea4\u53cb\u4f1a\u7ed3\u5408\u5fae\u4fe1\u6447\u4e00\u6447\u7684\u7ebf\u4e0a\u65b9\u5f0f\u642d\u5efa\u4ea4\u53cb\u5e73\u53f0\uff0c\u4e3a\u9752\u5e74\u4f19\u4f34\u4eec\u8fdb\u884c\u540e\u7eed\u4ea4\u6d41\u63d0\u4f9b\u673a\u4f1a\u3002\u6d3b\u52a8\u73b0\u573a\u8fd8\u8bc4\u51fa\u6700\u53d7\u6b22\u8fce\u7537\u5609\u5bbe\u548c\u5973\u5609\u5bbe\uff0c\u4ea6\u6709\u5728\u73b0\u573a\u6d3b\u52a8\u4e2d\u4e00\u89c1\u503e\u60c5\u7684\u5e78\u8fd0\u513f\uff0c\u8ba9\u201c\u7f18\u6765\u662f\u4f60\u201d\u7684\u6d3b\u52a8\u4e3b\u9898\u5f97\u5230\u7f8e\u597d\u8be0\u91ca\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><img src="/static/upload/ueditor/image/20141015/1413336743384915.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a12.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><span style="font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai; font-size: 16px;">\uff08\u9752\u5e74\u5728\u5c55\u677f\u524d\u67e5\u770b\u4ea4\u53cb\u4fe1\u606f\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u5b8b\u4f53, SimSun; font-size: 16px;">\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u7d27\u5bc6\u56f4\u7ed5\u6821\u56e2\u59d4\u201c\u878d\u5165\u4e2d\u5fc3&nbsp;\u8d70\u8fdb\u9752\u5e74\u201d\u7684\u5de5\u4f5c\u5b97\u65e8\uff0c\u7ed3\u5408\u9752\u5e74\u7ed3\u6784\u4e0e\u9662\u7cfb\u7279\u70b9\u6df1\u5165\u9752\u5e74\u5f53\u4e2d\uff0c\u5e2e\u52a9\u9752\u5e74\u89e3\u51b3\u5de5\u4f5c\u4e0e\u751f\u6d3b\u4e2d\u7684\u5b9e\u9645\u56f0\u96be\uff0c\u8bda\u5fc3\u4e3a\u9752\u5e74\u529e\u5b9e\u4e8b\u3001\u89e3\u96be\u9898\u3002</span></p><p><br/></p>', 0, 0, None, None)
+2014-10-15 09:36:06,820 ERROR: ERROR:500: IP:202.114.99.40 REQUEST URL:http://news.future.org.cn/article/action/add [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-15 09:36:07,015 ERROR: Header:Cookie: CNZZDATA1000537224=337043770-1411433109-http%253A%252F%252Fwww.future.org.cn%252F%7C1412732596; session=eyJpZCI6NCwicGFzc3dvcmQiOiIxMjM0NTYiLCJ1c2VybmFtZSI6Ilx1NWYyMFx1NWNiMSJ9.Bx9g0g.yDRDTz2bqycWagjoa4d7_yrIel8
+Origin: http://news.future.org.cn
+Content-Length: 6849
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+Connection: Keep-Alive
+Referer: http://news.future.org.cn/article/action/add
+Via: 1.1 FUTURE40
+X-Requested-With: XMLHttpRequest
+Host: news.future.org.cn
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-15 11:56:04,541 INFO: ERROR:404: IP:10.132.59.201 REQUEST URL:http://news.future.org.cn/favicon.ico [in /home/future/wwwroot/news/news/controller/errorHandler.py:19]
+2014-10-15 11:56:04,542 INFO: Header:Content-Length: 
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; Tablet PC 2.0; qihu theworld)
+Connection: Close
+Pragma: no-cache
+Host: news.future.org.cn
+Cache-Control: no-cache
+Accept: */*
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:20]
+2014-10-15 13:04:30,903 ERROR: Exception on /category/1 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/category.py", line 15, in viewCategory
+    category=db_category.Category().getCategortByid(id)
+  File "/home/future/wwwroot/news/news/model/category.py", line 61, in getCategortByid
+    return session.query(Category).filter(Category.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2418, in _execute_and_instances
+    close_with_result=True)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2409, in _connection_from_session
+    **kw)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 846, in connection
+    close_with_result=close_with_result)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 850, in _connection_for_bind
+    return self.transaction._connection_for_bind(engine)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 298, in _connection_for_bind
+    self._assert_active()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 210, in _assert_active
+    % self._rollback_exception
+InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (OperationalError) (2006, 'MySQL server has gone away') 'INSERT INTO news_article (categoryid, title, publisher, author, editor, `publishTime`, `updateTime`, content, views, state, checker1, checker2) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' (u'3', u'\u3010\u4eba\u6c11\u3011\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u5355\u8eab\u9752\u5e74\u4ea4\u53cb\u8054\u8c0a\u4f1a', u'\u6b66\u6c49\u5927\u5b66\u9752\u5e74\u4f20\u5a92\u96c6\u56e2', u'\u6587\u5b57\u8bb0\u8005 \u5305\u5b89\u88d5\uff1b\u56fe\u7247\u8bb0\u8005 \u674e\u660e', u'\u5f20\u5cb1', 0, 1413336966.613173, u'<p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;">\u91d1\u79cb\u5341\u6708\uff0c\u4e39\u6842\u98d8\u9999\u300210\u670812\u65e5\u4e0b\u5348\uff0c\u201c\u7f18\u6765\u662f\u4f60\u201d\u4ea4\u53cb\u8054\u8c0a\u4f1a\u5728\u6211\u6821\u4eba\u6c11\u533b\u9662\u6d3b\u52a8\u4e2d\u5fc3\u793c\u5802\u7cbe\u5f69\u4e0a\u6f14\uff0c\u672c\u6b21\u4ea4\u53cb\u8054\u8c0a\u4f1a\u7531\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e0e\u4e2d\u8239\u91cd\u5de5\u7b2c\u4e03\u3007\u4e00\u7814\u7a76\u6240\u56e2\u59d4\u5408\u529e\uff0c\u5438\u5f15\u4e86\u6b66\u6c49\u5927\u5b66\u3001\u4e2d\u56fd\u5efa\u8bbe\u94f6\u884c\u6e56\u5317\u7701\u5206\u884c\u3001\u6e56\u5317\u7701\u98df\u54c1\u836f\u54c1\u76d1\u7763\u68c0\u9a8c\u7814\u7a76\u9662\u3001\u6e56\u5317\u4e2d\u533b\u836f\u5927\u5b66\u7b49\u4f18\u8d28\u5355\u4f4d\u7684\u5355\u8eab\u9752\u5e7460\u4f59\u4eba\u53c2\u52a0\uff0c\u65e8\u5728\u901a\u8fc7\u5c0f\u89c4\u6a21\u7684\u6d3b\u52a8\u4fc3\u8fdb\u5355\u8eab\u9752\u5e74\u7684\u6df1\u5165\u4ea4\u6d41\uff0c\u5f00\u542f\u6709\u7f18\u4e4b\u65c5\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><img src="/static/upload/ueditor/image/20141015/1413336704159256.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><span style="font-size: 16px; font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai;">\uff08\u9752\u5e74\u4eec\u8fdb\u884c\u4ea4\u53cb\u6d3b\u52a8\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;">\u4ea4\u53cb\u8054\u8c0a\u4f1a\u901a\u8fc7\u201c\u5feb\u4e50\u62a5\u5230\u201d\u3001\u201c\u7231\u60c5\u884c\u8d70\u201d\u3001\u201c\u7ea2\u7ebf\u7275\u60c5\u201d\u3001\u201c\u6211\u629b\u7ee3\u7403\u201d\u56db\u4e2a\u4e3b\u9898\u6e38\u620f\u8c03\u52a8\u9752\u5e74\u7684\u53c2\u4e0e\u70ed\u60c5\uff0c\u8ba9\u5927\u5bb6\u5728\u8f7b\u677e\u6b22\u4e50\u7684\u6c1b\u56f4\u4e2d\u5c55\u793a\u81ea\u6211\u3001\u4e86\u89e3\u5bf9\u65b9\u3002\u6b64\u5916\uff0c\u4ea4\u53cb\u4f1a\u7ed3\u5408\u5fae\u4fe1\u6447\u4e00\u6447\u7684\u7ebf\u4e0a\u65b9\u5f0f\u642d\u5efa\u4ea4\u53cb\u5e73\u53f0\uff0c\u4e3a\u9752\u5e74\u4f19\u4f34\u4eec\u8fdb\u884c\u540e\u7eed\u4ea4\u6d41\u63d0\u4f9b\u673a\u4f1a\u3002\u6d3b\u52a8\u73b0\u573a\u8fd8\u8bc4\u51fa\u6700\u53d7\u6b22\u8fce\u7537\u5609\u5bbe\u548c\u5973\u5609\u5bbe\uff0c\u4ea6\u6709\u5728\u73b0\u573a\u6d3b\u52a8\u4e2d\u4e00\u89c1\u503e\u60c5\u7684\u5e78\u8fd0\u513f\uff0c\u8ba9\u201c\u7f18\u6765\u662f\u4f60\u201d\u7684\u6d3b\u52a8\u4e3b\u9898\u5f97\u5230\u7f8e\u597d\u8be0\u91ca\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><img src="/static/upload/ueditor/image/20141015/1413336743384915.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a12.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><span style="font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai; font-size: 16px;">\uff08\u9752\u5e74\u5728\u5c55\u677f\u524d\u67e5\u770b\u4ea4\u53cb\u4fe1\u606f\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u5b8b\u4f53, SimSun; font-size: 16px;">\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u7d27\u5bc6\u56f4\u7ed5\u6821\u56e2\u59d4\u201c\u878d\u5165\u4e2d\u5fc3&nbsp;\u8d70\u8fdb\u9752\u5e74\u201d\u7684\u5de5\u4f5c\u5b97\u65e8\uff0c\u7ed3\u5408\u9752\u5e74\u7ed3\u6784\u4e0e\u9662\u7cfb\u7279\u70b9\u6df1\u5165\u9752\u5e74\u5f53\u4e2d\uff0c\u5e2e\u52a9\u9752\u5e74\u89e3\u51b3\u5de5\u4f5c\u4e0e\u751f\u6d3b\u4e2d\u7684\u5b9e\u9645\u56f0\u96be\uff0c\u8bda\u5fc3\u4e3a\u9752\u5e74\u529e\u5b9e\u4e8b\u3001\u89e3\u96be\u9898\u3002</span></p><p><br/></p>', 0, 0, None, None)
+2014-10-15 13:04:31,113 ERROR: ERROR:500: IP:218.197.159.215 REQUEST URL:http://news.future.org.cn/category/1 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-15 13:04:31,317 ERROR: Header:Referer: http://www.future.org.cn/
+Content-Length: 
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729)
+Connection: Keep-Alive
+Cookie: CNZZDATA1000537224=1586025561-1413349509-http%253A%252F%252Fwww.future.org.cn%252F%7C1413349509
+Host: news.future.org.cn
+Accept: application/x-ms-application, image/jpeg, application/xaml+xml, image/gif, image/pjpeg, application/x-ms-xbap, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/msword, */*
+Accept-Language: zh-CN
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-15 14:45:57,341 ERROR: Exception on /article/58257 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2418, in _execute_and_instances
+    close_with_result=True)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2409, in _connection_from_session
+    **kw)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 846, in connection
+    close_with_result=close_with_result)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 850, in _connection_for_bind
+    return self.transaction._connection_for_bind(engine)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 298, in _connection_for_bind
+    self._assert_active()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 210, in _assert_active
+    % self._rollback_exception
+InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (OperationalError) (2006, 'MySQL server has gone away') 'INSERT INTO news_article (categoryid, title, publisher, author, editor, `publishTime`, `updateTime`, content, views, state, checker1, checker2) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' (u'3', u'\u3010\u4eba\u6c11\u3011\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u5355\u8eab\u9752\u5e74\u4ea4\u53cb\u8054\u8c0a\u4f1a', u'\u6b66\u6c49\u5927\u5b66\u9752\u5e74\u4f20\u5a92\u96c6\u56e2', u'\u6587\u5b57\u8bb0\u8005 \u5305\u5b89\u88d5\uff1b\u56fe\u7247\u8bb0\u8005 \u674e\u660e', u'\u5f20\u5cb1', 0, 1413336966.613173, u'<p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;">\u91d1\u79cb\u5341\u6708\uff0c\u4e39\u6842\u98d8\u9999\u300210\u670812\u65e5\u4e0b\u5348\uff0c\u201c\u7f18\u6765\u662f\u4f60\u201d\u4ea4\u53cb\u8054\u8c0a\u4f1a\u5728\u6211\u6821\u4eba\u6c11\u533b\u9662\u6d3b\u52a8\u4e2d\u5fc3\u793c\u5802\u7cbe\u5f69\u4e0a\u6f14\uff0c\u672c\u6b21\u4ea4\u53cb\u8054\u8c0a\u4f1a\u7531\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e0e\u4e2d\u8239\u91cd\u5de5\u7b2c\u4e03\u3007\u4e00\u7814\u7a76\u6240\u56e2\u59d4\u5408\u529e\uff0c\u5438\u5f15\u4e86\u6b66\u6c49\u5927\u5b66\u3001\u4e2d\u56fd\u5efa\u8bbe\u94f6\u884c\u6e56\u5317\u7701\u5206\u884c\u3001\u6e56\u5317\u7701\u98df\u54c1\u836f\u54c1\u76d1\u7763\u68c0\u9a8c\u7814\u7a76\u9662\u3001\u6e56\u5317\u4e2d\u533b\u836f\u5927\u5b66\u7b49\u4f18\u8d28\u5355\u4f4d\u7684\u5355\u8eab\u9752\u5e7460\u4f59\u4eba\u53c2\u52a0\uff0c\u65e8\u5728\u901a\u8fc7\u5c0f\u89c4\u6a21\u7684\u6d3b\u52a8\u4fc3\u8fdb\u5355\u8eab\u9752\u5e74\u7684\u6df1\u5165\u4ea4\u6d41\uff0c\u5f00\u542f\u6709\u7f18\u4e4b\u65c5\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><img src="/static/upload/ueditor/image/20141015/1413336704159256.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><span style="font-size: 16px; font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai;">\uff08\u9752\u5e74\u4eec\u8fdb\u884c\u4ea4\u53cb\u6d3b\u52a8\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;">\u4ea4\u53cb\u8054\u8c0a\u4f1a\u901a\u8fc7\u201c\u5feb\u4e50\u62a5\u5230\u201d\u3001\u201c\u7231\u60c5\u884c\u8d70\u201d\u3001\u201c\u7ea2\u7ebf\u7275\u60c5\u201d\u3001\u201c\u6211\u629b\u7ee3\u7403\u201d\u56db\u4e2a\u4e3b\u9898\u6e38\u620f\u8c03\u52a8\u9752\u5e74\u7684\u53c2\u4e0e\u70ed\u60c5\uff0c\u8ba9\u5927\u5bb6\u5728\u8f7b\u677e\u6b22\u4e50\u7684\u6c1b\u56f4\u4e2d\u5c55\u793a\u81ea\u6211\u3001\u4e86\u89e3\u5bf9\u65b9\u3002\u6b64\u5916\uff0c\u4ea4\u53cb\u4f1a\u7ed3\u5408\u5fae\u4fe1\u6447\u4e00\u6447\u7684\u7ebf\u4e0a\u65b9\u5f0f\u642d\u5efa\u4ea4\u53cb\u5e73\u53f0\uff0c\u4e3a\u9752\u5e74\u4f19\u4f34\u4eec\u8fdb\u884c\u540e\u7eed\u4ea4\u6d41\u63d0\u4f9b\u673a\u4f1a\u3002\u6d3b\u52a8\u73b0\u573a\u8fd8\u8bc4\u51fa\u6700\u53d7\u6b22\u8fce\u7537\u5609\u5bbe\u548c\u5973\u5609\u5bbe\uff0c\u4ea6\u6709\u5728\u73b0\u573a\u6d3b\u52a8\u4e2d\u4e00\u89c1\u503e\u60c5\u7684\u5e78\u8fd0\u513f\uff0c\u8ba9\u201c\u7f18\u6765\u662f\u4f60\u201d\u7684\u6d3b\u52a8\u4e3b\u9898\u5f97\u5230\u7f8e\u597d\u8be0\u91ca\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><img src="/static/upload/ueditor/image/20141015/1413336743384915.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a12.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><span style="font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai; font-size: 16px;">\uff08\u9752\u5e74\u5728\u5c55\u677f\u524d\u67e5\u770b\u4ea4\u53cb\u4fe1\u606f\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u5b8b\u4f53, SimSun; font-size: 16px;">\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u7d27\u5bc6\u56f4\u7ed5\u6821\u56e2\u59d4\u201c\u878d\u5165\u4e2d\u5fc3&nbsp;\u8d70\u8fdb\u9752\u5e74\u201d\u7684\u5de5\u4f5c\u5b97\u65e8\uff0c\u7ed3\u5408\u9752\u5e74\u7ed3\u6784\u4e0e\u9662\u7cfb\u7279\u70b9\u6df1\u5165\u9752\u5e74\u5f53\u4e2d\uff0c\u5e2e\u52a9\u9752\u5e74\u89e3\u51b3\u5de5\u4f5c\u4e0e\u751f\u6d3b\u4e2d\u7684\u5b9e\u9645\u56f0\u96be\uff0c\u8bda\u5fc3\u4e3a\u9752\u5e74\u529e\u5b9e\u4e8b\u3001\u89e3\u96be\u9898\u3002</span></p><p><br/></p>', 0, 0, None, None)
+2014-10-15 14:45:57,547 ERROR: ERROR:500: IP:171.83.63.99 REQUEST URL:http://news.future.org.cn/article/58257 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-15 14:45:57,758 ERROR: Header:X-Wap-Profile: http://apkupdate.miui.com/other/HM2013023_UAprofile.xml
+Content-Length: 
+Accept-Charset: utf-8, utf-16, *;q=0.7
+User-Agent: Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; 2013023 Build/HM2013023) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 V1_AND_SQ_5.1.1_158_YYB_D QQ/5.1.1.2245
+Connection: keep-alive
+X-Requested-With: com.tencent.mobileqq
+Host: news.future.org.cn
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-CN, en-US
+Content-Type: 
+Accept-Encoding: gzip,deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-15 15:28:08,918 INFO: ERROR:404: IP:10.128.71.197 REQUEST URL:http://news.future.org.cn/favicon.ico [in /home/future/wwwroot/news/news/controller/errorHandler.py:19]
+2014-10-15 15:28:08,921 INFO: Header:Cookie: bdshare_firstime=1409188420779; CNZZDATA1000537224=2059893744-1409188364-http%253A%252F%252Fwww.future.org.cn%252F%7C1413255029
+Content-Length: 
+User-Agent: UCBrowserHD/2.7.0.448 CFNetwork/672.1.15 Darwin/14.0.0
+Connection: keep-alive
+Host: news.future.org.cn
+Accept: */*
+Accept-Language: zh-cn
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:20]
+2014-10-15 16:11:44,354 ERROR: Exception on /article/58235 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2418, in _execute_and_instances
+    close_with_result=True)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2409, in _connection_from_session
+    **kw)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 846, in connection
+    close_with_result=close_with_result)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 850, in _connection_for_bind
+    return self.transaction._connection_for_bind(engine)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 298, in _connection_for_bind
+    self._assert_active()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 210, in _assert_active
+    % self._rollback_exception
+InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (OperationalError) (2006, 'MySQL server has gone away') 'INSERT INTO news_article (categoryid, title, publisher, author, editor, `publishTime`, `updateTime`, content, views, state, checker1, checker2) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' (u'3', u'\u3010\u4eba\u6c11\u3011\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u5355\u8eab\u9752\u5e74\u4ea4\u53cb\u8054\u8c0a\u4f1a', u'\u6b66\u6c49\u5927\u5b66\u9752\u5e74\u4f20\u5a92\u96c6\u56e2', u'\u6587\u5b57\u8bb0\u8005 \u5305\u5b89\u88d5\uff1b\u56fe\u7247\u8bb0\u8005 \u674e\u660e', u'\u5f20\u5cb1', 0, 1413336966.613173, u'<p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;">\u91d1\u79cb\u5341\u6708\uff0c\u4e39\u6842\u98d8\u9999\u300210\u670812\u65e5\u4e0b\u5348\uff0c\u201c\u7f18\u6765\u662f\u4f60\u201d\u4ea4\u53cb\u8054\u8c0a\u4f1a\u5728\u6211\u6821\u4eba\u6c11\u533b\u9662\u6d3b\u52a8\u4e2d\u5fc3\u793c\u5802\u7cbe\u5f69\u4e0a\u6f14\uff0c\u672c\u6b21\u4ea4\u53cb\u8054\u8c0a\u4f1a\u7531\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e0e\u4e2d\u8239\u91cd\u5de5\u7b2c\u4e03\u3007\u4e00\u7814\u7a76\u6240\u56e2\u59d4\u5408\u529e\uff0c\u5438\u5f15\u4e86\u6b66\u6c49\u5927\u5b66\u3001\u4e2d\u56fd\u5efa\u8bbe\u94f6\u884c\u6e56\u5317\u7701\u5206\u884c\u3001\u6e56\u5317\u7701\u98df\u54c1\u836f\u54c1\u76d1\u7763\u68c0\u9a8c\u7814\u7a76\u9662\u3001\u6e56\u5317\u4e2d\u533b\u836f\u5927\u5b66\u7b49\u4f18\u8d28\u5355\u4f4d\u7684\u5355\u8eab\u9752\u5e7460\u4f59\u4eba\u53c2\u52a0\uff0c\u65e8\u5728\u901a\u8fc7\u5c0f\u89c4\u6a21\u7684\u6d3b\u52a8\u4fc3\u8fdb\u5355\u8eab\u9752\u5e74\u7684\u6df1\u5165\u4ea4\u6d41\uff0c\u5f00\u542f\u6709\u7f18\u4e4b\u65c5\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><img src="/static/upload/ueditor/image/20141015/1413336704159256.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><span style="font-size: 16px; font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai;">\uff08\u9752\u5e74\u4eec\u8fdb\u884c\u4ea4\u53cb\u6d3b\u52a8\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;">\u4ea4\u53cb\u8054\u8c0a\u4f1a\u901a\u8fc7\u201c\u5feb\u4e50\u62a5\u5230\u201d\u3001\u201c\u7231\u60c5\u884c\u8d70\u201d\u3001\u201c\u7ea2\u7ebf\u7275\u60c5\u201d\u3001\u201c\u6211\u629b\u7ee3\u7403\u201d\u56db\u4e2a\u4e3b\u9898\u6e38\u620f\u8c03\u52a8\u9752\u5e74\u7684\u53c2\u4e0e\u70ed\u60c5\uff0c\u8ba9\u5927\u5bb6\u5728\u8f7b\u677e\u6b22\u4e50\u7684\u6c1b\u56f4\u4e2d\u5c55\u793a\u81ea\u6211\u3001\u4e86\u89e3\u5bf9\u65b9\u3002\u6b64\u5916\uff0c\u4ea4\u53cb\u4f1a\u7ed3\u5408\u5fae\u4fe1\u6447\u4e00\u6447\u7684\u7ebf\u4e0a\u65b9\u5f0f\u642d\u5efa\u4ea4\u53cb\u5e73\u53f0\uff0c\u4e3a\u9752\u5e74\u4f19\u4f34\u4eec\u8fdb\u884c\u540e\u7eed\u4ea4\u6d41\u63d0\u4f9b\u673a\u4f1a\u3002\u6d3b\u52a8\u73b0\u573a\u8fd8\u8bc4\u51fa\u6700\u53d7\u6b22\u8fce\u7537\u5609\u5bbe\u548c\u5973\u5609\u5bbe\uff0c\u4ea6\u6709\u5728\u73b0\u573a\u6d3b\u52a8\u4e2d\u4e00\u89c1\u503e\u60c5\u7684\u5e78\u8fd0\u513f\uff0c\u8ba9\u201c\u7f18\u6765\u662f\u4f60\u201d\u7684\u6d3b\u52a8\u4e3b\u9898\u5f97\u5230\u7f8e\u597d\u8be0\u91ca\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><img src="/static/upload/ueditor/image/20141015/1413336743384915.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a12.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><span style="font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai; font-size: 16px;">\uff08\u9752\u5e74\u5728\u5c55\u677f\u524d\u67e5\u770b\u4ea4\u53cb\u4fe1\u606f\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u5b8b\u4f53, SimSun; font-size: 16px;">\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u7d27\u5bc6\u56f4\u7ed5\u6821\u56e2\u59d4\u201c\u878d\u5165\u4e2d\u5fc3&nbsp;\u8d70\u8fdb\u9752\u5e74\u201d\u7684\u5de5\u4f5c\u5b97\u65e8\uff0c\u7ed3\u5408\u9752\u5e74\u7ed3\u6784\u4e0e\u9662\u7cfb\u7279\u70b9\u6df1\u5165\u9752\u5e74\u5f53\u4e2d\uff0c\u5e2e\u52a9\u9752\u5e74\u89e3\u51b3\u5de5\u4f5c\u4e0e\u751f\u6d3b\u4e2d\u7684\u5b9e\u9645\u56f0\u96be\uff0c\u8bda\u5fc3\u4e3a\u9752\u5e74\u529e\u5b9e\u4e8b\u3001\u89e3\u96be\u9898\u3002</span></p><p><br/></p>', 0, 0, None, None)
+2014-10-15 16:11:44,551 ERROR: ERROR:500: IP:193.191.138.240 REQUEST URL:http://news.future.org.cn/article/58235 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-15 16:11:44,750 ERROR: Header:Referer: http://www.future.org.cn/
+Content-Length: 
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0
+Connection: Keep-Alive
+Cookie: SLnewses=1; CNZZDATA1000537224=1913047123-1413360406-http%253A%252F%252Fwww.future.org.cn%252F%7C1413360406
+X-Bluecoat-Via: 9250aeab680908f1
+Host: news.future.org.cn
+Cache-Control: max-stale=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: nl,en-us;q=0.7,en;q=0.3
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-15 20:07:48,103 ERROR: Exception on /article/58246 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2418, in _execute_and_instances
+    close_with_result=True)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2409, in _connection_from_session
+    **kw)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 846, in connection
+    close_with_result=close_with_result)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 850, in _connection_for_bind
+    return self.transaction._connection_for_bind(engine)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 298, in _connection_for_bind
+    self._assert_active()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 210, in _assert_active
+    % self._rollback_exception
+InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (OperationalError) (2006, 'MySQL server has gone away') 'INSERT INTO news_article (categoryid, title, publisher, author, editor, `publishTime`, `updateTime`, content, views, state, checker1, checker2) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' (u'3', u'\u3010\u4eba\u6c11\u3011\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u5355\u8eab\u9752\u5e74\u4ea4\u53cb\u8054\u8c0a\u4f1a', u'\u6b66\u6c49\u5927\u5b66\u9752\u5e74\u4f20\u5a92\u96c6\u56e2', u'\u6587\u5b57\u8bb0\u8005 \u5305\u5b89\u88d5\uff1b\u56fe\u7247\u8bb0\u8005 \u674e\u660e', u'\u5f20\u5cb1', 0, 1413336966.613173, u'<p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;">\u91d1\u79cb\u5341\u6708\uff0c\u4e39\u6842\u98d8\u9999\u300210\u670812\u65e5\u4e0b\u5348\uff0c\u201c\u7f18\u6765\u662f\u4f60\u201d\u4ea4\u53cb\u8054\u8c0a\u4f1a\u5728\u6211\u6821\u4eba\u6c11\u533b\u9662\u6d3b\u52a8\u4e2d\u5fc3\u793c\u5802\u7cbe\u5f69\u4e0a\u6f14\uff0c\u672c\u6b21\u4ea4\u53cb\u8054\u8c0a\u4f1a\u7531\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e0e\u4e2d\u8239\u91cd\u5de5\u7b2c\u4e03\u3007\u4e00\u7814\u7a76\u6240\u56e2\u59d4\u5408\u529e\uff0c\u5438\u5f15\u4e86\u6b66\u6c49\u5927\u5b66\u3001\u4e2d\u56fd\u5efa\u8bbe\u94f6\u884c\u6e56\u5317\u7701\u5206\u884c\u3001\u6e56\u5317\u7701\u98df\u54c1\u836f\u54c1\u76d1\u7763\u68c0\u9a8c\u7814\u7a76\u9662\u3001\u6e56\u5317\u4e2d\u533b\u836f\u5927\u5b66\u7b49\u4f18\u8d28\u5355\u4f4d\u7684\u5355\u8eab\u9752\u5e7460\u4f59\u4eba\u53c2\u52a0\uff0c\u65e8\u5728\u901a\u8fc7\u5c0f\u89c4\u6a21\u7684\u6d3b\u52a8\u4fc3\u8fdb\u5355\u8eab\u9752\u5e74\u7684\u6df1\u5165\u4ea4\u6d41\uff0c\u5f00\u542f\u6709\u7f18\u4e4b\u65c5\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><img src="/static/upload/ueditor/image/20141015/1413336704159256.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><span style="font-size: 16px; font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai;">\uff08\u9752\u5e74\u4eec\u8fdb\u884c\u4ea4\u53cb\u6d3b\u52a8\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;">\u4ea4\u53cb\u8054\u8c0a\u4f1a\u901a\u8fc7\u201c\u5feb\u4e50\u62a5\u5230\u201d\u3001\u201c\u7231\u60c5\u884c\u8d70\u201d\u3001\u201c\u7ea2\u7ebf\u7275\u60c5\u201d\u3001\u201c\u6211\u629b\u7ee3\u7403\u201d\u56db\u4e2a\u4e3b\u9898\u6e38\u620f\u8c03\u52a8\u9752\u5e74\u7684\u53c2\u4e0e\u70ed\u60c5\uff0c\u8ba9\u5927\u5bb6\u5728\u8f7b\u677e\u6b22\u4e50\u7684\u6c1b\u56f4\u4e2d\u5c55\u793a\u81ea\u6211\u3001\u4e86\u89e3\u5bf9\u65b9\u3002\u6b64\u5916\uff0c\u4ea4\u53cb\u4f1a\u7ed3\u5408\u5fae\u4fe1\u6447\u4e00\u6447\u7684\u7ebf\u4e0a\u65b9\u5f0f\u642d\u5efa\u4ea4\u53cb\u5e73\u53f0\uff0c\u4e3a\u9752\u5e74\u4f19\u4f34\u4eec\u8fdb\u884c\u540e\u7eed\u4ea4\u6d41\u63d0\u4f9b\u673a\u4f1a\u3002\u6d3b\u52a8\u73b0\u573a\u8fd8\u8bc4\u51fa\u6700\u53d7\u6b22\u8fce\u7537\u5609\u5bbe\u548c\u5973\u5609\u5bbe\uff0c\u4ea6\u6709\u5728\u73b0\u573a\u6d3b\u52a8\u4e2d\u4e00\u89c1\u503e\u60c5\u7684\u5e78\u8fd0\u513f\uff0c\u8ba9\u201c\u7f18\u6765\u662f\u4f60\u201d\u7684\u6d3b\u52a8\u4e3b\u9898\u5f97\u5230\u7f8e\u597d\u8be0\u91ca\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><img src="/static/upload/ueditor/image/20141015/1413336743384915.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a12.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><span style="font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai; font-size: 16px;">\uff08\u9752\u5e74\u5728\u5c55\u677f\u524d\u67e5\u770b\u4ea4\u53cb\u4fe1\u606f\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u5b8b\u4f53, SimSun; font-size: 16px;">\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u7d27\u5bc6\u56f4\u7ed5\u6821\u56e2\u59d4\u201c\u878d\u5165\u4e2d\u5fc3&nbsp;\u8d70\u8fdb\u9752\u5e74\u201d\u7684\u5de5\u4f5c\u5b97\u65e8\uff0c\u7ed3\u5408\u9752\u5e74\u7ed3\u6784\u4e0e\u9662\u7cfb\u7279\u70b9\u6df1\u5165\u9752\u5e74\u5f53\u4e2d\uff0c\u5e2e\u52a9\u9752\u5e74\u89e3\u51b3\u5de5\u4f5c\u4e0e\u751f\u6d3b\u4e2d\u7684\u5b9e\u9645\u56f0\u96be\uff0c\u8bda\u5fc3\u4e3a\u9752\u5e74\u529e\u5b9e\u4e8b\u3001\u89e3\u96be\u9898\u3002</span></p><p><br/></p>', 0, 0, None, None)
+2014-10-15 20:07:48,534 ERROR: ERROR:500: IP:171.83.53.126 REQUEST URL:http://news.future.org.cn/article/58246 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-15 20:07:48,962 ERROR: Header:Cookie: CNZZDATA1000537224=210715198-1413374258-%7C1413374258
+Content-Length: 
+Accept-Charset: utf-8, iso-8859-1, utf-16, *;q=0.7
+User-Agent: Mozilla/5.0 (Linux; U; Android 4.3; zh-cn; HM 1SW Build/JLS36C) AppleWebKit/533.1 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.4 Mobile Safari/533.1 V1_AND_SQ_5.1.1_158_YYB_D QQ/5.1.1.2245
+Connection: keep-alive
+Host: news.future.org.cn
+Accept: application/vnd.wap.xhtml+xml, text/vnd.wap.wml, application/xhtml+xml, text/html, image/png, image/jpeg, image/gif, */*;q=0.1
+Accept-Language: zh-CN
+Content-Type: 
+Accept-Encoding: gzip
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-15 20:42:55,681 INFO: ERROR:404: IP:10.128.94.167 REQUEST URL:http://news.future.org.cn/favicon.ico [in /home/future/wwwroot/news/news/controller/errorHandler.py:19]
+2014-10-15 20:42:55,681 INFO: Header:Content-Length: 
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; BIDUBrowser 2.x)
+Connection: Keep-Alive
+Host: news.future.org.cn
+Cache-Control: no-cache
+Content-Type: 
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:20]
+2014-10-15 23:08:39,282 ERROR: Exception on /article/58272 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2418, in _execute_and_instances
+    close_with_result=True)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2409, in _connection_from_session
+    **kw)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 846, in connection
+    close_with_result=close_with_result)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 850, in _connection_for_bind
+    return self.transaction._connection_for_bind(engine)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 298, in _connection_for_bind
+    self._assert_active()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 210, in _assert_active
+    % self._rollback_exception
+InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (OperationalError) (2006, 'MySQL server has gone away') 'INSERT INTO news_article (categoryid, title, publisher, author, editor, `publishTime`, `updateTime`, content, views, state, checker1, checker2) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' (u'3', u'\u3010\u4eba\u6c11\u3011\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u5355\u8eab\u9752\u5e74\u4ea4\u53cb\u8054\u8c0a\u4f1a', u'\u6b66\u6c49\u5927\u5b66\u9752\u5e74\u4f20\u5a92\u96c6\u56e2', u'\u6587\u5b57\u8bb0\u8005 \u5305\u5b89\u88d5\uff1b\u56fe\u7247\u8bb0\u8005 \u674e\u660e', u'\u5f20\u5cb1', 0, 1413336966.613173, u'<p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;">\u91d1\u79cb\u5341\u6708\uff0c\u4e39\u6842\u98d8\u9999\u300210\u670812\u65e5\u4e0b\u5348\uff0c\u201c\u7f18\u6765\u662f\u4f60\u201d\u4ea4\u53cb\u8054\u8c0a\u4f1a\u5728\u6211\u6821\u4eba\u6c11\u533b\u9662\u6d3b\u52a8\u4e2d\u5fc3\u793c\u5802\u7cbe\u5f69\u4e0a\u6f14\uff0c\u672c\u6b21\u4ea4\u53cb\u8054\u8c0a\u4f1a\u7531\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e0e\u4e2d\u8239\u91cd\u5de5\u7b2c\u4e03\u3007\u4e00\u7814\u7a76\u6240\u56e2\u59d4\u5408\u529e\uff0c\u5438\u5f15\u4e86\u6b66\u6c49\u5927\u5b66\u3001\u4e2d\u56fd\u5efa\u8bbe\u94f6\u884c\u6e56\u5317\u7701\u5206\u884c\u3001\u6e56\u5317\u7701\u98df\u54c1\u836f\u54c1\u76d1\u7763\u68c0\u9a8c\u7814\u7a76\u9662\u3001\u6e56\u5317\u4e2d\u533b\u836f\u5927\u5b66\u7b49\u4f18\u8d28\u5355\u4f4d\u7684\u5355\u8eab\u9752\u5e7460\u4f59\u4eba\u53c2\u52a0\uff0c\u65e8\u5728\u901a\u8fc7\u5c0f\u89c4\u6a21\u7684\u6d3b\u52a8\u4fc3\u8fdb\u5355\u8eab\u9752\u5e74\u7684\u6df1\u5165\u4ea4\u6d41\uff0c\u5f00\u542f\u6709\u7f18\u4e4b\u65c5\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><img src="/static/upload/ueditor/image/20141015/1413336704159256.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><span style="font-size: 16px; font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai;">\uff08\u9752\u5e74\u4eec\u8fdb\u884c\u4ea4\u53cb\u6d3b\u52a8\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;">\u4ea4\u53cb\u8054\u8c0a\u4f1a\u901a\u8fc7\u201c\u5feb\u4e50\u62a5\u5230\u201d\u3001\u201c\u7231\u60c5\u884c\u8d70\u201d\u3001\u201c\u7ea2\u7ebf\u7275\u60c5\u201d\u3001\u201c\u6211\u629b\u7ee3\u7403\u201d\u56db\u4e2a\u4e3b\u9898\u6e38\u620f\u8c03\u52a8\u9752\u5e74\u7684\u53c2\u4e0e\u70ed\u60c5\uff0c\u8ba9\u5927\u5bb6\u5728\u8f7b\u677e\u6b22\u4e50\u7684\u6c1b\u56f4\u4e2d\u5c55\u793a\u81ea\u6211\u3001\u4e86\u89e3\u5bf9\u65b9\u3002\u6b64\u5916\uff0c\u4ea4\u53cb\u4f1a\u7ed3\u5408\u5fae\u4fe1\u6447\u4e00\u6447\u7684\u7ebf\u4e0a\u65b9\u5f0f\u642d\u5efa\u4ea4\u53cb\u5e73\u53f0\uff0c\u4e3a\u9752\u5e74\u4f19\u4f34\u4eec\u8fdb\u884c\u540e\u7eed\u4ea4\u6d41\u63d0\u4f9b\u673a\u4f1a\u3002\u6d3b\u52a8\u73b0\u573a\u8fd8\u8bc4\u51fa\u6700\u53d7\u6b22\u8fce\u7537\u5609\u5bbe\u548c\u5973\u5609\u5bbe\uff0c\u4ea6\u6709\u5728\u73b0\u573a\u6d3b\u52a8\u4e2d\u4e00\u89c1\u503e\u60c5\u7684\u5e78\u8fd0\u513f\uff0c\u8ba9\u201c\u7f18\u6765\u662f\u4f60\u201d\u7684\u6d3b\u52a8\u4e3b\u9898\u5f97\u5230\u7f8e\u597d\u8be0\u91ca\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><img src="/static/upload/ueditor/image/20141015/1413336743384915.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a12.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><span style="font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai; font-size: 16px;">\uff08\u9752\u5e74\u5728\u5c55\u677f\u524d\u67e5\u770b\u4ea4\u53cb\u4fe1\u606f\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u5b8b\u4f53, SimSun; font-size: 16px;">\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u7d27\u5bc6\u56f4\u7ed5\u6821\u56e2\u59d4\u201c\u878d\u5165\u4e2d\u5fc3&nbsp;\u8d70\u8fdb\u9752\u5e74\u201d\u7684\u5de5\u4f5c\u5b97\u65e8\uff0c\u7ed3\u5408\u9752\u5e74\u7ed3\u6784\u4e0e\u9662\u7cfb\u7279\u70b9\u6df1\u5165\u9752\u5e74\u5f53\u4e2d\uff0c\u5e2e\u52a9\u9752\u5e74\u89e3\u51b3\u5de5\u4f5c\u4e0e\u751f\u6d3b\u4e2d\u7684\u5b9e\u9645\u56f0\u96be\uff0c\u8bda\u5fc3\u4e3a\u9752\u5e74\u529e\u5b9e\u4e8b\u3001\u89e3\u96be\u9898\u3002</span></p><p><br/></p>', 0, 0, None, None)
+2014-10-15 23:08:41,345 ERROR: ERROR:500: IP:27.17.159.142 REQUEST URL:http://news.future.org.cn/article/58272 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-15 23:08:42,587 ERROR: Header:Referer: http://www.future.org.cn/
+Content-Length: 
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.124 Safari/537.36
+Connection: keep-alive
+Cookie: bdshare_firstime=1410238393866; CNZZDATA1000537224=1181801171-1410238388-http%253A%252F%252Fwww.future.org.cn%252F%7C1413265923
+Host: news.future.org.cn
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,en;q=0.6
+Content-Type: 
+Accept-Encoding: gzip,deflate,sdch
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-16 14:06:32,773 ERROR: Exception on /article/58246 [GET] [in /usr/lib/python2.7/dist-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python2.7/dist-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/future/wwwroot/news/news/controller/article.py", line 88, in viewfrontArticle
+    article=db_article.Article().getArticleByid(id)
+  File "/home/future/wwwroot/news/news/model/article.py", line 96, in getArticleByid
+    return session.query(Article).filter(Article.id == id).first()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2334, in first
+    ret = list(self[0:1])
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2201, in __getitem__
+    return list(res)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2418, in _execute_and_instances
+    close_with_result=True)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/query.py", line 2409, in _connection_from_session
+    **kw)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 846, in connection
+    close_with_result=close_with_result)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 850, in _connection_for_bind
+    return self.transaction._connection_for_bind(engine)
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 298, in _connection_for_bind
+    self._assert_active()
+  File "/home/future/wwwroot/news/env/local/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 210, in _assert_active
+    % self._rollback_exception
+InvalidRequestError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (OperationalError) (2006, 'MySQL server has gone away') 'INSERT INTO news_article (categoryid, title, publisher, author, editor, `publishTime`, `updateTime`, content, views, state, checker1, checker2) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)' (u'3', u'\u3010\u4eba\u6c11\u3011\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u5355\u8eab\u9752\u5e74\u4ea4\u53cb\u8054\u8c0a\u4f1a', u'\u6b66\u6c49\u5927\u5b66\u9752\u5e74\u4f20\u5a92\u96c6\u56e2', u'\u6587\u5b57\u8bb0\u8005 \u5305\u5b89\u88d5\uff1b\u56fe\u7247\u8bb0\u8005 \u674e\u660e', u'\u5f20\u5cb1', 0, 1413336966.613173, u'<p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;">\u91d1\u79cb\u5341\u6708\uff0c\u4e39\u6842\u98d8\u9999\u300210\u670812\u65e5\u4e0b\u5348\uff0c\u201c\u7f18\u6765\u662f\u4f60\u201d\u4ea4\u53cb\u8054\u8c0a\u4f1a\u5728\u6211\u6821\u4eba\u6c11\u533b\u9662\u6d3b\u52a8\u4e2d\u5fc3\u793c\u5802\u7cbe\u5f69\u4e0a\u6f14\uff0c\u672c\u6b21\u4ea4\u53cb\u8054\u8c0a\u4f1a\u7531\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e0e\u4e2d\u8239\u91cd\u5de5\u7b2c\u4e03\u3007\u4e00\u7814\u7a76\u6240\u56e2\u59d4\u5408\u529e\uff0c\u5438\u5f15\u4e86\u6b66\u6c49\u5927\u5b66\u3001\u4e2d\u56fd\u5efa\u8bbe\u94f6\u884c\u6e56\u5317\u7701\u5206\u884c\u3001\u6e56\u5317\u7701\u98df\u54c1\u836f\u54c1\u76d1\u7763\u68c0\u9a8c\u7814\u7a76\u9662\u3001\u6e56\u5317\u4e2d\u533b\u836f\u5927\u5b66\u7b49\u4f18\u8d28\u5355\u4f4d\u7684\u5355\u8eab\u9752\u5e7460\u4f59\u4eba\u53c2\u52a0\uff0c\u65e8\u5728\u901a\u8fc7\u5c0f\u89c4\u6a21\u7684\u6d3b\u52a8\u4fc3\u8fdb\u5355\u8eab\u9752\u5e74\u7684\u6df1\u5165\u4ea4\u6d41\uff0c\u5f00\u542f\u6709\u7f18\u4e4b\u65c5\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><img src="/static/upload/ueditor/image/20141015/1413336704159256.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-size: 16px; font-family: \u5b8b\u4f53, SimSun;"><span style="font-size: 16px; font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai;">\uff08\u9752\u5e74\u4eec\u8fdb\u884c\u4ea4\u53cb\u6d3b\u52a8\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;">\u4ea4\u53cb\u8054\u8c0a\u4f1a\u901a\u8fc7\u201c\u5feb\u4e50\u62a5\u5230\u201d\u3001\u201c\u7231\u60c5\u884c\u8d70\u201d\u3001\u201c\u7ea2\u7ebf\u7275\u60c5\u201d\u3001\u201c\u6211\u629b\u7ee3\u7403\u201d\u56db\u4e2a\u4e3b\u9898\u6e38\u620f\u8c03\u52a8\u9752\u5e74\u7684\u53c2\u4e0e\u70ed\u60c5\uff0c\u8ba9\u5927\u5bb6\u5728\u8f7b\u677e\u6b22\u4e50\u7684\u6c1b\u56f4\u4e2d\u5c55\u793a\u81ea\u6211\u3001\u4e86\u89e3\u5bf9\u65b9\u3002\u6b64\u5916\uff0c\u4ea4\u53cb\u4f1a\u7ed3\u5408\u5fae\u4fe1\u6447\u4e00\u6447\u7684\u7ebf\u4e0a\u65b9\u5f0f\u642d\u5efa\u4ea4\u53cb\u5e73\u53f0\uff0c\u4e3a\u9752\u5e74\u4f19\u4f34\u4eec\u8fdb\u884c\u540e\u7eed\u4ea4\u6d41\u63d0\u4f9b\u673a\u4f1a\u3002\u6d3b\u52a8\u73b0\u573a\u8fd8\u8bc4\u51fa\u6700\u53d7\u6b22\u8fce\u7537\u5609\u5bbe\u548c\u5973\u5609\u5bbe\uff0c\u4ea6\u6709\u5728\u73b0\u573a\u6d3b\u52a8\u4e2d\u4e00\u89c1\u503e\u60c5\u7684\u5e78\u8fd0\u513f\uff0c\u8ba9\u201c\u7f18\u6765\u662f\u4f60\u201d\u7684\u6d3b\u52a8\u4e3b\u9898\u5f97\u5230\u7f8e\u597d\u8be0\u91ca\u3002</span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><img src="/static/upload/ueditor/image/20141015/1413336743384915.jpg" alt="\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u4e3e\u529e\u4ea4\u53cb\u8054\u8c0a\u4f1a12.jpg"/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em; text-align: center;"><span style="font-family: \u4eff\u5b8b_GB2312; font-size: 16px;"><span style="font-family: \u6977\u4f53, \u6977\u4f53_GB2312, SimKai; font-size: 16px;">\uff08\u9752\u5e74\u5728\u5c55\u677f\u524d\u67e5\u770b\u4ea4\u53cb\u4fe1\u606f\uff09</span><br/></span></p><p style="text-indent: 37px; margin-bottom: 10px; margin-top: 10px; line-height: 1.75em;"><span style="font-family: \u5b8b\u4f53, SimSun; font-size: 16px;">\u4eba\u6c11\u533b\u9662\u56e2\u59d4\u7d27\u5bc6\u56f4\u7ed5\u6821\u56e2\u59d4\u201c\u878d\u5165\u4e2d\u5fc3&nbsp;\u8d70\u8fdb\u9752\u5e74\u201d\u7684\u5de5\u4f5c\u5b97\u65e8\uff0c\u7ed3\u5408\u9752\u5e74\u7ed3\u6784\u4e0e\u9662\u7cfb\u7279\u70b9\u6df1\u5165\u9752\u5e74\u5f53\u4e2d\uff0c\u5e2e\u52a9\u9752\u5e74\u89e3\u51b3\u5de5\u4f5c\u4e0e\u751f\u6d3b\u4e2d\u7684\u5b9e\u9645\u56f0\u96be\uff0c\u8bda\u5fc3\u4e3a\u9752\u5e74\u529e\u5b9e\u4e8b\u3001\u89e3\u96be\u9898\u3002</span></p><p><br/></p>', 0, 0, None, None)
+2014-10-16 14:06:32,991 ERROR: ERROR:500: IP:101.226.65.104 REQUEST URL:http://news.future.org.cn/article/58246 [in /home/future/wwwroot/news/news/controller/errorHandler.py:7]
+2014-10-16 14:06:33,213 ERROR: Header:Content-Length: 
+Accept-Charset: GB2312,utf-8;q=0.7,*;q=0.7
+User-Agent: Mozilla/4.0
+Connection: close
+Host: news.future.org.cn
+Accept: */*
+Accept-Language: zh-cn, zh
+Content-Type: 
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:8]
+2014-10-16 15:04:15,276 INFO: ERROR:404: IP:10.128.90.6 REQUEST URL:http://news.future.org.cn/favicon.ico [in /home/future/wwwroot/news/news/controller/errorHandler.py:19]
+2014-10-16 15:04:15,277 INFO: Header:Cookie: Hm_lvt_997dd1ef1cd0ffc71b030c6fb102054c=1397650872,1398482325,1399473800; CNZZDATA1000537224=1024602942-1411612328-http%253A%252F%252Fwww.future.org.cn%252F%7C1413443150
+Content-Length: 
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.137 Safari/537.36 LBBROWSER
+Connection: keep-alive
+Host: news.future.org.cn
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8
+Content-Type: 
+Accept-Encoding: gzip,deflate,sdch
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:20]
+2014-10-16 15:58:24,497 INFO: ERROR:404: IP:144.76.0.170 REQUEST URL:http://news.future.org.cn/articles/38362.html [in /home/future/wwwroot/news/news/controller/errorHandler.py:19]
+2014-10-16 15:58:24,498 INFO: Header:Content-Length: 
+User-Agent: Mozilla/5.0 (compatible; MJ12bot/v1.4.5; http://www.majestic12.co.uk/bot.php?+)
+Connection: close
+Host: news.future.org.cn
+Accept: text/html,text/plain,text/xml,text/*,application/xml,application/xhtml+xml,application/rss+xml,application/atom+xml,application/rdf+xml
+Accept-Language: zh
+Content-Type: 
+Accept-Encoding: gzip
+
+ [in /home/future/wwwroot/news/news/controller/errorHandler.py:20]

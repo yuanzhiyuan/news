@@ -1,0 +1,23 @@
+{% extends 'front/base.html' %}
+{% block content %}
+        {% for singleList in listBlock %}
+        <div class="content-body">
+            <div class="category-logo">
+                <img src="/static/images/news.png">
+                <span><a href="/category/{{ singleList['categoryid'] }}">{{ singleList['categoryname'] }}</a></span>
+                <span style="font-size: 12px;padding:8px 0 0 8px"><a href="/category/{{ singleList['categoryid'] }}">更多</a></span>
+            </div>
+            <div class="category-list multiple-list-addtion">
+                <ul>
+                    {% if singleList['articleList'] %}
+                        {% for singleArticle in singleList['articleList'] %}
+                            <li><a href="/article/{{ singleArticle['id'] }}" title='{{ singleArticle['title'] }}'>{{ singleArticle['title'] }}</a><span class="list-time">{{ singleArticle['publishTime'] | timeformat('%Y-%m-%d %H:%M') }}</span></li>
+                        {% endfor %}
+                    {% else %}
+                        <li>该分类下暂无文章</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+{% endblock %}

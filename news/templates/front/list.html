@@ -1,0 +1,21 @@
+{% extends 'front/base.html' %}
+{% block content %}
+        <div class="content-body">
+            <div class="category-logo">
+                <img src="/static/images/news.png">
+                <span>{{ category.categoryname }}</span>
+            </div>
+            <div class="category-list category-list-addtion">
+                <ul>
+                    {% for article in articleList %}
+                    <li><span><a href="/article/{{ article.id }}" title='{{ article.title }}'>{{ article.title }}</a></span><span class="list-time">{{ article.publishTime | timeformat('%Y-%m-%d %H:%M') }}</span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="pagination-container">
+                {% autoescape false %}
+                    {{ paginationHTML }}
+                {% endautoescape %}
+            </div>
+        </div>
+{% endblock %}

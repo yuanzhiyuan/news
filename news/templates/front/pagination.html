@@ -1,0 +1,14 @@
+<div class="pagination-box">
+    <span class="info">共<span class="total">{{ totalElements }}</span>条，每页<span class="per">{{ pageSize }}</span>条，分<span class="pages">{{ totalPage }}</span>页显示</span>
+    <ul class="pagination">
+        <li><a href="{{ preLink }}{{ currentPage-1 }}"><span>Prev</span></a></li>
+            {% for pagecounter in range(currentPage,currentPage+paginationSize) %}
+                {% if currentPage == pagecounter %}
+                    <li><span style="background-color: #00b2ec;color: #ffffff">{{ pagecounter }}</span></li>
+                {% else %}
+                    <li><a href="{{ preLink }}{{ pagecounter }}">{{ pagecounter }}</a></li>
+                {% endif %}
+            {% endfor %}
+        <li><a href="{{ preLink }}{{ currentPage+1 }}">Next</a></li>
+    </ul>
+</div>

@@ -1,0 +1,52 @@
+{% extends 'front/base.html' %}
+{% block content %}
+        <div class="content-body">
+            <div class="article-logo">
+                <img src="/static/images/news.png">
+                <span><a href="/category/{{ category.id }}">{{ category.categoryname }}</a> > 正文</span>
+            </div>
+            <div class="article-body">
+                <div id="article-header">
+                    <h1>{{ article.title }}</h1>
+                    <p>发布者：【{{ article.publisher }}】　 发布时间：【{{ article.publishTime | timeformat('%Y-%m-%d %H:%M') }}】</p>
+                    <p>【作者：{{ article.author }}】【编辑:{{ article.editor }}】【点击：{{ article.views }}】</p>
+                    <div class="bdsharebuttonbox bd_share">
+                        <a href="#" class="bds_more" data-cmd="more"></a>
+                        <a href="#" class="bds_qzone" data-cmd="qzone"></a>
+                        <a href="#" class="bds_tsina" data-cmd="tsina"></a>
+                        <a href="#" class="bds_tqq" data-cmd="tqq"></a>
+                        <a href="#" class="bds_renren" data-cmd="renren"></a>
+                        <a href="#" class="bds_weixin" data-cmd="weixin"></a>
+                    </div>
+                </div>
+                <div id="article-content">
+                    {% autoescape false %}
+                        {{ article.content }}
+                    {% endautoescape %}
+                </div>
+            </div>
+            <div id="article-comment">
+                <img src="/static/images/comment.png">
+                <span>评论</span>
+            </div>
+            <div id="comment-content">
+                <!-- 多说评论框 start -->
+                <div class="ds-thread" data-thread-key="{{ article.id }}" data-title="{{ article.title }}" data-url="http://news.future.org.cn/article/{{ article.id }}"></div>
+                <!-- 多说评论框 end -->
+                <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+                <script type="text/javascript">
+                    var duoshuoQuery = {short_name:"future"};
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';ds.async = true;
+                        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0]
+                                || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+                <!-- 多说公共JS代码 end -->
+            </div>
+        </div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+{% endblock %}

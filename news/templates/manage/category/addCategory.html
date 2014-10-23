@@ -1,0 +1,46 @@
+{% extends "manage/admin.html" %}
+{% block content %}
+  <div id="main">
+    <div id="main_page_content"> 
+      <div id="main_title"><h2>添加板块</h2></div>
+      <div id="main_body">
+        <div id="addBlock">
+
+          <div class="addUser_row">
+            <div class="addUser_leftRow">选择级数</div>
+            <div class="addUser_rightRow"><select id="selectLevel"  name="category_level"><option value="1">一级板块</option><option value="2">二级板块</option></select></div>
+          </div>
+	<div id="yiji">
+          <div class="addUser_row">
+            <div class="addUser_leftRow">添加一级板块</div>
+            <div class="addUser_rightRow"><input type="text" id="categoryname1" placeholder="板块名称"/></div>
+          </div>
+          <div class="addUser_row">
+            <div class="addUser_leftRow"></div>
+            <div class="addUser_rightRow"><button type="submit" onclick="addCategory1()">提交</button></div>
+          </div>
+	</div>
+	<div id="erji">
+          <div class="addUser_row">
+            <div class="addUser_leftRow">选择一级板块</div>
+            <div class="addBlock_rightRow">
+                {% for parent in parents %}
+              <button class="category1_item" data-parentid="{{ parent.id }}" onclick="selectCategory(this)">{{ parent.categoryname }}</button>
+
+                {% endfor %}
+            </div>
+          </div>
+          <div class="addUser_row">
+            <div class="addUser_leftRow">添加二级板块</div>
+            <div class="addUser_rightRow"><input type="text" id="categoryname2" placeholder="板块名称"/></div>
+          </div>
+          <div class="addUser_row">
+            <div class="addUser_leftRow"></div>
+            <div class="addUser_rightRow"><button type="submit" onclick="addCategory2()">提交</button></div>
+          </div>
+	</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

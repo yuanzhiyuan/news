@@ -7,6 +7,8 @@ import news.controller.index
 import news.controller.user
 import news.controller.article
 import news.controller.category
+import news.controller.tools
+import news.controller.ueditor
 
 if not config.DEBUG:
     import news.controller.errorHandler

@@ -1,0 +1,83 @@
+<script src="/static/ueditor/ueditor.config.js"></script>
+<script src="/static/ueditor/editor_api.js"></script>
+<script src="/static/ueditor/lang/zh-cn/zh-cn.js"></script>
+{% extends "manage/admin.html" %}
+{% block content %}
+  <div id="main">
+    <div id="main_page_content"> 
+      <div id="main_title">
+      {% if mode==0 %}
+          <h2>添加文章</h2>
+      {% elif mode==1 %}
+          <h2>修改文章</h2>
+      {% endif %}
+      </div>
+      <div id="main_body">
+        <div id="addArticle">
+        {% if mode==0 %}
+          <div class="addArticle_row"><input type="text" id="title" placeholder="这里输入标题" autofocus></div>
+
+          <div class="addArticle_row"><input type="text" id="author" placeholder="这里输入作者"><br></div>
+            <div class="addArticle_row"><input type="text" id="publisher" placeholder="这里输入发布者"></div>
+          <script id="editor" type="text/plain"></script>
+          <div id="type-choose">
+              {% for categoryid in category_dict %}
+              <button data-categoryid="{{ categoryid }}">{{ category_dict[categoryid] }}</button>
+              {% endfor %}
+          </div>
+          <div id="child-type-choose">
+          </div>
+          <div class="addArticle_row"><button type="submit" onclick="addArticle()">确认提交</button></div>
+        {% elif mode==1 %}
+        <div class="addArticle_row"><input type="text" id="title" placeholder="这里输入标题" value="{{ title }}" autofocus></div>
+
+          <div class="addArticle_row"><input type="text" id="author" placeholder="这里输入作者" value="{{ author }}"><br></div>
+            <div class="addArticle_row"><input type="text" id="publisher" placeholder="这里输入发布者" value="{{ publisher }}"></div>
+
+            <script id="editor" type="text/plain">{{ content|safe }}</script>
+          <div id="type-choose">
+              {% for categoryid in category_dict %}
+              <button data-categoryid="{{ categoryid }}">{{ category_dict[categoryid] }}</button>
+              {% endfor %}
+          </div>
+          <div id="child-type-choose">
+          </div>
+
+          <div class="addArticle_row"><button data-articleid="{{ articleid }}" onclick="updateArticle(this)">确认提交</button></div>
+
+
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+ <script>
+ $('#type-choose button').click(function(){
+     $('#type-choose button').css({'background':'#eee','color':'#666','border-color':'#ddd'}).removeClass('active');
+     $(this).css({'background-color':'#2F95CE','border-color':'#2F95CE','color':'#ffffff'}).addClass('active');
+     $.post('/category/getchildid',{
+       categoryid:$(this).attr('data-categoryid')
+     },function(data,status){
+        var childcategoryDOMHTML='';
+        var childList=data['childcategory'];
+         for(var i in childList){
+             childcategoryDOMHTML+=createchildDOM(i,childList[i]);
+         }
+         $('#child-type-choose').html(childcategoryDOMHTML);
+         $('#child-type-choose button').click(function(){
+             $('#type-choose button').removeClass('active')
+             $('#child-type-choose button').css({'background':'#eee','color':'#666','border-color':'#ddd'});
+             $(this).css({'background-color':'#2F95CE','border-color':'#2F95CE','color':'#ffffff'});
+             $(this).addClass('active')
+         })
+     });
+ });
+
+ function createchildDOM(categoryid,categoryname){
+    return "<button data-categoryid='"+categoryid+"'>"+categoryname+"</button>";
+
+ }
+
+ var ue = UE.getEditor('editor');
+ </script>
+{% endblock %}

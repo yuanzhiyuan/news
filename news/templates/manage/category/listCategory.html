@@ -1,0 +1,42 @@
+{% extends "manage/admin.html" %}
+{% block content %}
+
+
+  <div id="main">
+    <div id="main_page_content"> 
+      <div id="main_title"><h2>管理板块</h2></div>
+      <div id="main_body">
+        <div id="article_manage_table">
+          <table id="article_manage" cellpadding="0" cellspacing="0">
+            <thead>
+               <tr>
+                  <th class="block_manage_item">id</th>
+                  <th class="block_manage_item">板块名</th>
+                  <th class="block_manage_item">文章数</th>
+                  <th class="block_manage_item">父板块</th>
+                  <th class="block_manage_item">删除</th>
+                  <th class="block_manage_item">重命名</th>
+               </tr>
+            </thead>
+            <tbody>
+            {% for category in allCategory %}
+              <tr>
+                <td class="block_manage_item">{{ category.id }}</td>
+                <td class="block_manage_item"><input value="{{ category.categoryname }}" style="display: none;" ><span>{{ category.categoryname }}</span></td>
+                <td class="block_manage_item">{{ categoryid_count_dict[category.id] }}</td>
+                <td class="block_manage_item">{{ categoryid_name_dict[category.parentid] }}</td>
+                <td class="block_manage_item">
+                    <button data-categoryid="{{ category.id }}" onclick="deleteCategory(this)">删除</button>
+                </td>
+                <td class="block_manage_item"><button data-categoryid="{{ category.id }}" class="renameButton">重命名</button></td>
+              </tr>
+            {% endfor %}
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

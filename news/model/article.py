@@ -1,6 +1,7 @@
 __author__ = 'kongkongyzt'
 from common import *
-
+from sqlalchemy import desc
+import time
 class Article(Base):
     __tablename__='news_article'
 
@@ -11,15 +12,119 @@ class Article(Base):
     author=Column(String(20))
     editor=Column(String(20))
     publishTime=Column(Integer,default=0)
-    updateTime=Column(Integer,default=0)
+    updateTime=Column(Integer)
     content=Column(Text)
     views=Column(Integer,default=0)
     state=Column(Integer,default=0)
     checker1=Column(String(20))
     checker2=Column(String(20))
+    checker3=Column(String(20))
+
+
+    def addArticle(self,categoryid,title,publisher,author,editor,content):
+        article=Article(categoryid=categoryid,title=title,publisher=publisher,author=author,editor=editor,updateTime=time.time(),content=content)
+        if article:
+            session.add(article)
+            session.commit()
+            return True
+        else:
+            return False
+
 
 
     def getArticle(self,id):
-        test=session.query(Article).filter(Article.id == id).first()
-        print test,'========='
-        return test
+        return session.query(Article).filter(Article.id == id).first()
+
+    def getCountOfCategory(self,categoryid):
+        if categoryid:
+            articles=session.query(Article).filter(Article.categoryid==categoryid)
+
+            count=articles.count()
+            return count
+        else:
+            return False
+
+    def getAllArticles(self):
+        return session.query(Article)
+
+
+    def getArticleByAOrderByB(self,article,A=None,A_value=None,B=0):
+        Alist=['categoryid','editor','state']
+        Blist=['id','updateTime','views']
+
+
+        if A!=None:
+            if A not in range(len(Alist)) or B not in range(len(Blist)):
+                return False
+
+
+            articles=article.filter(eval('Article.'+Alist[A])==A_value).order_by(desc(eval('Article.'+Blist[B])))
+
+            if articles:
+                return articles
+            else:
+                return False
+            # return users
+        else:
+
+            articles=article.order_by(desc(eval('Article.'+Blist[B])))
+
+
+            if articles:
+                return articles
+            else:
+                return False
+
+    def cutArticles(self,articles,pageNum,pageSize=20):
+        if articles:
+            if articles.count()!=0:
+                pages=articles.count()/pageSize
+                result=articles.limit(pageSize).offset((pageNum-1)*pageSize).all()
+                return articles.count(),pages,result
+            return False
+        return False
+
+    def deleteArticle(self,id):
+        article=session.query(Article).filter(Article.id==id).first()
+        if article:
+            session.delete(article)
+            session.commit()
+            return True
+        else:
+            return False
+    
+    def getArticleByid(self,id):
+        return session.query(Article).filter(Article.id == id).first()
+
+    def getArticleByCategoryid(self,categoryid,page=1,pageSize=16,order=None):
+        handler=session.query(Article).filter(Article.categoryid == categoryid).filter(Article.state>0)
+        total=handler.count()
+        if order == 'reverse':
+            return total,handler.order_by(desc(Article.id)).limit(pageSize).offset((page-1)*pageSize).all()
+        return total,handler.limit(pageSize).offset((page-1)*pageSize).all()
+
+    def updateViews(self,id):
+        article=session.query(Article).filter(Article.id == id).first()
+        session.query(Article).filter(Article.id == id).update({'views':article.views+1})
+        session.commit()
+
+
+    def verifyArticle(self,id,state,username):
+        article=session.query(Article).filter(Article.id==id)
+        if not article:
+            return False
+        article.update({'state':state,'checker'+str(state):username,'publishTime':int(time.time())})
+        session.commit()
+        return True
+
+
+    def updateArticle(self,articleid,categoryid,title,publisher,author,content):
+        article=session.query(Article).filter(Article.id==articleid)
+        if article:
+            article.update({'categoryid':categoryid,'title':title,'publisher':publisher,'author':author,'content':content,'updateTime':time.time()})
+            session.commit()
+            return True
+        else:
+            return False
+
+

@@ -1,0 +1,90 @@
+{% extends "manage/admin.html" %}
+{% block content %}
+  <div id="main">
+    <div id="main_page_content"> 
+      <div id="main_title"><h2>管理文章</h2></div>
+      <div id="main_body">
+        <div id="article_manage_table">
+          <table id="article_manage" cellpadding="0" cellspacing="0">
+            <thead>
+               <tr>
+                  <th class="articleTable_id">文章id</th>
+                  <th class="articleTable_title">标题</th>
+                  <th class="articleTable_author">作者</th>
+                  <th class="articleTable_publisher">发布者</th>
+                  <th class="articleTable_editor">编辑</th>
+                  <th class="articleTable_category">分类</th>
+                  <th class="articleTable_updateTime">更新时间</th>
+                  <th class="articleTable_state">状态</th>
+		<th class="articleTable_checker1">一审者</th>
+                   <th class="articleTable_checker2">二审者</th>
+                   <th class="articleTable_checker3">三审者</th>
+                  <th class="articleTable_delete">审核</th>
+                  <th class="articleTable_update">修改</th>
+                  <th class="articleTable_delete">删除</th>
+               </tr>
+            </thead>
+            <tbody>
+            {% for article in articles %}
+              <tr>
+                <td class="articleTable_id">{{ article.id }}</td>
+                <td class="articleTable_title"><a href="/article/{{ article.id }}" target="_blank">{{ article.title }}</a>
+                </td>
+                <td class="articleTable_author">{{ article.author }}</td>
+                <td class="articleTable_publisher">{{ article.publisher }}</td>
+                <td class="articleTable_editor">{{ article.editor }}</td>
+                <td class="articleTable_category">{{ category_dict[article.categoryid] }}</td>
+                <td class="articleTable_updateTime">{{ article.updateTime | timeformat('%Y-%m-%d %H:%M') }}</td>
+                <td class="articleTable_state">
+                    {% if article.state==0 %} 未审核
+                    {% elif article.state==1 %} 已过一审
+                    {% elif article.state==2 %} 已过二审
+                    {% elif article.state==3 %} 已过三审
+                    {% else %} 参数错误
+                    {% endif %}
+                </td>
+		<td class="articleTable_checker1">
+                    {% if not article.checker1 %}
+                    无
+                    {% else %}
+                    {{ article.checker1 }}
+                    {% endif %}
+                </td>
+                   <td class="articleTable_checker2">
+                    {% if not article.checker2 %}
+                    无
+                    {% else %}
+                    {{ article.checker2 }}
+                    {% endif %}
+                </td>
+                <td class="articleTable_checker3">
+                    {% if not article.checker3 %}
+                    无
+                    {% else %}
+                    {{ article.checker3 }}
+                    {% endif %}
+                </td>
+                <td class="articleTable_verify">
+                    <button data-articleid="{{ article.id }}" data-articlestate="{{ article.state }}" onclick="verifyArticle('1',this)">一审</button><br>
+                    <button data-articleid="{{ article.id }}" data-articlestate="{{ article.state }}" onclick="verifyArticle('2',this)">二审</button><br>
+                    <button data-articleid="{{ article.id }}" data-articlestate="{{ article.state }}" onclick="verifyArticle('3',this)">三审</button></td>
+                <td class="articleTable_update"><button onclick="location.href='/article/action/update/{{ article.id }}'">修改</button></td>
+                <td class="articleTable_delete">
+                    <button type="submit" data-articleid="{{ article.id }}" onclick="deleteArticle(this)">删除</button>
+                </td>
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+        </div>
+        <div class="fenye">{% autoescape false %}
+                    {{ paginationHTML }}
+                {% endautoescape %}</div>
+      </div>
+    </div>
+
+  </div>
+
+
+{% endblock %}

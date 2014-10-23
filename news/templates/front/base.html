@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="武汉大学未来网新闻子网">
+    <meta name="keywords" content="武汉大学未来网，未来网，武大新闻，未来网新闻子网，武大团委">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/news-front.css">
+</head>
+<body>
+<script>
+    var topid={{ topid }}
+</script>
+    <div id="body-wrapper">
+        <div id="banner">
+            <div id="navigation">
+                <ul>
+                    <li class="sm-width"><a href="http://www.future.org.cn">首页</a></li>
+                    <li class="sm-width" data-topid="1"><a href="/category/1">公告</a></li>
+                    <li class="sm-width" data-topid="2"><a href="/category/2">新闻</a></li>
+                    <li class="sm-width" data-topid="3"><a href="/category/3">院系</a></li>
+                    <li class="sm-width"><a href="http://luoqing.future.org.cn">珞青报</a></li>
+                    <li class="sm-width"><a href="http://ebook.future.org.cn">E刊</a></li>
+                    <li class="lg-width"><a href="http://netview.future.org.cn">未来网视</a></li>
+                    <li class="lg-width" data-topid="4"><a href="/category/4">信息服务</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Different content start-->
+            {% block content %}
+            {% endblock %}
+        <!--Different content end-->
+        <div id="footer">
+            <p>Copyright © 2001-2014 All Right Reserved 版权所有 武汉大学未来网</p>
+            <p>主办单位 共青团武汉大学委员会 | 鄂ICP备 06009949</p>
+            <p>技术支撑:青传技术中心 <a href="http://tech.future.org.cn" style="color: #ffffff">团队博客</a> Power By Python Flask强力驱动</p>
+        </div>
+    </div>
+<script src="/static/js/jquery-1.11.1.min.js"></script>
+<script src="/static/js/news-front.js"></script>
+<div style="display:none">
+ <script src="http://s4.cnzz.com/z_stat.php?id=1000537224&web_id=1000537224" language="JavaScript"></script>
+</div>
+</body>
+</html>

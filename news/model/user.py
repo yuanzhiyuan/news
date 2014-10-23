@@ -9,7 +9,7 @@ class User(Base):
     username=Column(String(40))
     password=Column(String(40))
     lastip=Column(String(20))
-    lasttime=Column(Integer)
+    lasttime=Column(Integer,default=0)
 
 
     def updateInfo(self,id=None,username=None,password=None,lastip=None,lasttime=None):
@@ -23,7 +23,7 @@ class User(Base):
             session.commit()
             return True
         elif username:
-            userObj=session.query(User).filter(User.id==id)
+            userObj=session.query(User).filter(User.username==username)
             if password:
 
                 changeDict={'password':md5(password).hexdigest()}
@@ -56,18 +56,39 @@ class User(Base):
             else:
                 return False
 
+    def addUser(self,username,password):
+        userObj=User(username=username,password=md5(password).hexdigest())
+        if userObj:
+            session.add(userObj)
+            session.commit()
+            return True
+        else:
+            return False
 
+    def getAllUsers(self):
+        return session.query(User)
 
+    def deleteUser(self,userid):
+        userObj=self.getUserObj(id=userid)
+        if userObj:
+            session.delete(userObj)
+            session.commit()
+            return True
+        else:
+            return False
 
+    def getUserList(self):
+        users=self.getAllUsers()
+        user_list=[]
+        for user in users:
+            user_list.append(user.username)
+        return user_list
 
 
 
 
 
 Base.metadata.create_all(engine)
-
-user=User()
-user.updateInfo(id=2,password='950708')
 
 
 
